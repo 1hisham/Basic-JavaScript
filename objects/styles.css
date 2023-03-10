@@ -1,0 +1,21 @@
+
+    .items{
+        font-size: 50px;
+        display: flex;
+        gap: 60px;
+        
+    }
+@media screen and (min-width: 1024px) {
+    .items{
+        color: red; 
+         flex-direction: column;
+         
+
+    }
+    .items li{
+        display: flex;
+        justify-content: end;
+    }
+         
+
+}

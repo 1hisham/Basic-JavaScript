@@ -81,8 +81,32 @@
 
     // FUNTIONS
 
-    const MyArrown = () =>{
-        console.log("hello");
-    }
+    // const MyArrown = () =>{
+    //     console.log("hello");
+    // }
 
-     
+    //  const obj = {
+    //     data:undefined,
+    //     error:undefined.
+    //     then: () =>
+    //  }
+    
+fetch("https://jsonplaceholder.typicode.com/todos/2")
+.then((data) =>data.json())
+.then((data) =>{
+    console.log(data);
+})
+.catch((err) => {
+    console.log("te",err);
+})
+
+
+// const newpr = pr.then((data) => {
+//   const pr2 = data.json()
+//      pr2
+// console.log(pr);
+
+// newpr.then((data) => {
+//     console.log("hello");
+//     console.log(data);
+// })
