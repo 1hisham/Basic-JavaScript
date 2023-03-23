@@ -1,0 +1,29 @@
+li{
+    list-style: none;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+    cursor: pointer;
+    /* display: inline-block; */
+}
+.firstrow,.secondrow,.thirdrow{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+}
+.container{
+    display: flex;
+    gap: 50px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
