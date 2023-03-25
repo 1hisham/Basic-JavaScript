@@ -1,16 +1,20 @@
 li{
     list-style: none;
     font-size: 25px;
-    width: 50px;
-    height: 50px;
+    width: 27px;
+    height: 27px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     background-color: antiquewhite;
     cursor: pointer;
     /* display: inline-block; */
+}
+li:hover{
+    transform: scale(1.2);
+    background-color: rgb(186, 241, 223);
 }
 .firstrow,.secondrow,.thirdrow{
     display: flex;
@@ -26,4 +30,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.item{
+    background-color: rgb(200, 200, 230);
 }
