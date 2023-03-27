@@ -49,13 +49,10 @@ first.forEach((item) => {
   item.addEventListener("mouseenter", () => {
     loc = 0;
     console.log(loc);
-    //    console.log( letter(item.innerHTML,loc));
+   
     forOutput(letter(item.innerHTML, loc), loc);
   });
   item.addEventListener("mouseleave", () => {
-    // first.forEach(div=>{
-    //     div.classList.remove("item")
-    // })
     second.forEach((div) => {
       div.classList.remove("item");
     });
@@ -76,9 +73,6 @@ second.forEach((item) => {
     first.forEach((div) => {
       div.classList.remove("item");
     });
-    // second.forEach(div=>{
-    //     div.classList.remove("item")
-    // })
     third.forEach((div) => {
       div.classList.remove("item");
     });
@@ -98,9 +92,7 @@ third.forEach((item) => {
     second.forEach((div) => {
       div.classList.remove("item");
     });
-    // third.forEach(div=>{
-    //     div.classList.remove("item")
-    // })
+
   });
 });
 
@@ -108,23 +100,27 @@ function forOutput(items, loc) {
   console.log(items, "items");
   console.log(loc, "location");
   let letterArray =[]
-  
+ 
 
   items.forEach((item) => {
     if (loc == 0) {
       second.forEach((div) => {
         if(div.innerHTML == item[1]){
           let array = countAllLetter(letterArray)
-          array.forEach(count=> {
-            let ct = count * 2
-            
+          console.log(array);
+          
+
+      letterArray.forEach(word => {
+       console.log(word);
+      
          
           if (div.className == `${item[1]} second`) {
             div.classList.add("item");
-            div.setAttribute('style',`filter: opacity(0.${ct})`)
           }
+     
+          
         })
-          letterArray.push(div.innerHTML)
+        letterArray.push(div.innerHTML)
         }
         console.log(div);
       
