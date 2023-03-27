@@ -47,9 +47,6 @@ let loc;
 
 first.forEach((item) => {
   item.addEventListener("mouseenter", () => {
-    console.log(item.className == "b first");
-
-    console.log(item.innerHTML);
     loc = 0;
     console.log(loc);
     //    console.log( letter(item.innerHTML,loc));
@@ -110,13 +107,30 @@ third.forEach((item) => {
 function forOutput(items, loc) {
   console.log(items, "items");
   console.log(loc, "location");
+  let letterArray =[]
+  
 
   items.forEach((item) => {
     if (loc == 0) {
       second.forEach((div) => {
-        if (div.className == `${item[1]} second`) {
-          div.classList.add("item");
+        if(div.innerHTML == item[1]){
+          let array = countAllLetter(letterArray)
+          array.forEach(count=> {
+            let ct = count * 2
+            
+         
+          if (div.className == `${item[1]} second`) {
+            div.classList.add("item");
+            div.setAttribute('style',`filter: opacity(0.${ct})`)
+          }
+        })
+          letterArray.push(div.innerHTML)
         }
+        console.log(div);
+      
+      
+       
+     
       });
       third.forEach((div) => {
         if (div.className == `${item[2]} third`) {
@@ -149,4 +163,19 @@ function forOutput(items, loc) {
       });
     }
   });
+}
+
+// for item count
+
+function countAllLetter(Array){
+  const mapping = new Map()
+  for(let i = 0; i< Array.length;i++){
+  if(!mapping.has(Array[i])){
+      mapping.set(Array[i],1)
+  }else{
+      mapping.set(Array[i], mapping.get(Array[i])+1)
+    
+  }
+}
+return mapping
 }
