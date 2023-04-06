@@ -3,28 +3,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addstudent.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
     <div class="main">
-        <form>
+        <form class="form-inputs">
             <label>Name<input  class="name"  type="text" placeholder="Enter your name"></label>
             <label>Address<input class="adress" type="text" placeholder="Enter your address"></label>
-            <label>Gender<select class="Gender">
+            <label>Gender<select class="gender">
                 <option>Male</option>
                 <option>Female</option>
                 <option>others</option>
             </select></label>
             <label>Date of Birth<input class="dob" type="date"></label>
-            <label>Admission No<input class="admissionno" type="number" ></label>
-            <label>Single Parent</label><input class="dob" type="checkbox">
-            <label>Grade<select class="Grade">
+            <label>Admission No<input class="addno" type="number" ></label>
+            <label>Single Parent<input class="parent" type="checkbox"></label>
+            <label>Grade<select class="grade">
                 <option>Grade 1</option>
                 <option>Grade 2</option>
                 <option>Grade 3</option>
             </select></label>
-            
+            <button class="submit">Submit</button>
 
         </form>
         

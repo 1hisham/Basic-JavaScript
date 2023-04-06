@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 20px;
+    background-color: darkgrey;
+}
+.main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center ;
+}
+label{
+    margin-bottom: 15px ;
+
+}
+input,select{
+    margin-left: 5px;
+}

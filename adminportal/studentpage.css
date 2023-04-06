@@ -10,7 +10,7 @@ a{
     color: inherit;
 }
 
-li{
+.main li{
     display: flex;
     flex-direction: column;
     gap: 5%;
@@ -25,7 +25,7 @@ li{
  
     
  }
-i{
+.main i{
     font-size: 10rem;
     color: aliceblue;
     opacity: 0.8;
@@ -43,7 +43,43 @@ i{
     background-color:#F7F5EB;
     
 }
- span{
+.main span{
     font-size: 40px;
     color: aliceblue;
+}
+
+.leftside .heading{
+    text-align: center;
+}
+.leftside .items li{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: pointer;
+}
+.leftside .items i{
+    margin-left: 5px;
+}
+.leftside .items hr{
+    width: 80%;
+}
+.total{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+}
+.leftside{
+    background-color: rgba(0, 0, 0, 0.856);
+    width: 20vw;
+    color: rgb(194, 194, 194);
+}
+.main{
+    background-color:#F9F5EB;
+    width: 80vw;
+
+ 
 }
