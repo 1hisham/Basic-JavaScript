@@ -12,7 +12,8 @@ function LaptopItem(){
             <Header />
             <Navitems />
             <LaptopCarousel />
-            <TotalItem />            
+            <TotalItem />  
+                       
         </div>
     )
 }

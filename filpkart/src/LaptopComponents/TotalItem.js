@@ -1,5 +1,6 @@
 import ItemCardHeading from "./ItemsCardHeading"
 import LaptopItemCards from "./LaptopItemCards"
+import './TotalItem.css'
 
 
 

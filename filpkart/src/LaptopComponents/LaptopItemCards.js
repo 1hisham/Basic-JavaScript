@@ -5,11 +5,13 @@ import LaptopSingleCard from "./LaptopSingleCard";
 function LaptopItemCards(){
    
 
-    const [data, setData] = useState([]);
+    const [dataone, setDataone] = useState([]);
+    const [datatwo, setDatatwo] = useState([]);
     const fetchData = async () => {
       const response = await fetch("./lapdata.json");
       const json = await response.json();
-        setData(json.ProductDeatils[0].itemdetails)
+        setDataone(json.ProductDeatils[0].itemdetails)
+        setDatatwo(json.ProductDeatils[1].itemdetails)
         console.log(json.ProductDeatils);
         
     };
@@ -21,7 +23,8 @@ function LaptopItemCards(){
    
     return(
     <>
-    <LaptopSingleCard props={data}/>
+    <LaptopSingleCard props={datatwo}/>
+    <LaptopSingleCard props={dataone}/>
     </>
     )
     }

@@ -1,0 +1,7 @@
+.total-item-container{
+    display: flex;
+    max-width: 1440px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 10px;
+}
