@@ -1,12 +1,20 @@
-import './MoreHeader.css'
-import arrow from './../LaptopSvg/arrowHeader.svg'
+import arrow from "./../LaptopSvg/arrowHeader.svg";
+import styled from "styled-components";
 
-function MoreHeader(){
-    return(
-        <div className='total-more-header'>
-            <span>More</span>
-            <img src={arrow} />
-        </div>
-    )
+function MoreHeader() {
+  return (
+    <Totalmore>
+      <span>More</span>
+      <img src={arrow} />
+    </Totalmore>
+  );
 }
-export default MoreHeader
+const Totalmore = styled.div`
+  display: flex;
+  gap: 3px;
+  color: white;
+  img {
+    transform: rotate(270deg);
+  }
+`;
+export default MoreHeader;

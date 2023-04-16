@@ -1,16 +1,28 @@
-import ItemCardHeading from "./ItemsCardHeading"
-import LaptopItemCards from "./LaptopItemCards"
-import './TotalItem.css'
+import ButtonLeft from "./ButtonLeft";
+import ButtonRight from "./ButtonRight";
+import ItemCardHeading from "./ItemCardHeading";
+import LaptopSingleCard from "./LaptopSingleCard";
+import styled from "styled-components";
 
-
-
-function TotalItem(){
-    return(
-    <div className="total-item-container">
- <ItemCardHeading />       
-<LaptopItemCards />
-    </div>
-    )
+function TotalItem({ data }) {
+  return (
+    <Totalitem>
+      <ButtonLeft />
+      <ButtonRight />
+      <ItemCardHeading data={data} />
+      <LaptopSingleCard itemDetails={data.itemdetails} />
+    </Totalitem>
+  );
 }
 
-export default TotalItem
+const Totalitem = styled.div`
+  display: flex;
+  max-width: 1440px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10px;
+  background-color: white;
+  position: relative;
+`;
+
+export default TotalItem;

@@ -1,13 +1,16 @@
-import cart from './../LaptopSvg/laptopcart.svg'
-import './CartHeader.css'
+import cart from "./../LaptopSvg/laptopcart.svg";
 
-function CartHeader(){
-    return(
-        <div className='total-cart-header'>
-            <img src={cart} />
-            <span>Cart</span>
-        </div>
-    )
+import styled from "styled-components";
+
+function CartHeader() {
+  return (
+    <TotalCardHeader>
+      <img src={cart} />
+      <span>Cart</span>
+    </TotalCardHeader>
+  );
 }
-
-export default CartHeader
+const TotalCardHeader = styled.div`
+  color: white;
+`;
+export default CartHeader;

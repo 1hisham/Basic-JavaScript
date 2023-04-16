@@ -1,31 +1,12 @@
-import React,{useState, useEffect} from "react";
+import ItemCardHeading from "./ItemCardHeading";
 import LaptopSingleCard from "./LaptopSingleCard";
 
-
-function LaptopItemCards(){
-   
-
-    const [dataone, setDataone] = useState([]);
-    const [datatwo, setDatatwo] = useState([]);
-    const fetchData = async () => {
-      const response = await fetch("./lapdata.json");
-      const json = await response.json();
-        setDataone(json.ProductDeatils[0].itemdetails)
-        setDatatwo(json.ProductDeatils[1].itemdetails)
-        console.log(json.ProductDeatils);
-        
-    };
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    
-   
-    return(
+function LaptopItemCards({ item }) {
+  return (
     <>
-    <LaptopSingleCard props={datatwo}/>
-    <LaptopSingleCard props={dataone}/>
+      <ItemCardHeading props={item} />
+      {/* <LaptopSingleCard /> */}
     </>
-    )
-    }
-    export default LaptopItemCards
+  );
+}
+export default LaptopItemCards;
