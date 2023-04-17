@@ -3,7 +3,9 @@ import "./Carousel.css";
 
 function Carousel() {
   const [carouseldata, setData] = useState([]);
-  let [count, setCount] = useState(0)
+  const [visibleIndex, setVisibleIndex] = useState(0);
+  const [transition, setTranstion] = useState(0.3);
+  const [time, setTime] = useState(1000);
   
 
   let fetchdata = () => {
@@ -13,52 +15,40 @@ function Carousel() {
         setData(data.movingitem);
       });
   };
-  // console.log(carouseldata.length);
 
-
-  // setInterval(() => {
-  //   if(count == 5){
-  //     count = 0
-  //     clearInterval(count)
-  //   }
-  //   setCount(++count)
-  // }, 2000);
-  // console.log(count);
-
-  // let i=1; 
-  // function Itteration(i){
-  //     setTimeout(function(){
-  //        output(i)
-         
-  //        if(i==10){
-  //          i = 0
-  //        }
-  //       Itteration(i+1)
-  //     }, 2000)
-  // }
-  // Itteration(i);
-  
-  // function output(i){
-   
-  //   setCount(i)
-    
-  // } 
-  
-
- 
 
   useEffect(() => {
     fetchdata();
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      UpdateIndex();
+    }, time);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [visibleIndex]);
+
+  let UpdateIndex = () => {
+    if (visibleIndex == carouseldata?.length - 1) {
+      setTime(10);
+      setVisibleIndex(0);
+      setTranstion(0);
+    } else {
+      setVisibleIndex(visibleIndex + 1);
+      setTranstion(0.3);
+      setTime(1000);
+    }
+  };
+
+
   return (
     <div className="full-carousel">
-      <div className="total-carousel">
-        <style>{`
-        @keyframes slidein {
-             0% { transform: translateX(-${count - 1}00%); }
-             100% { transform: translateX(-${count}00%); }
-        }
-    `}</style>
+      <div className="total-carousel" style={{
+        transform:`translateX(-${visibleIndex * 100}%)`,
+        transition:`translate${transition}s ease-in-out`,
+      }}>
+   
         <div className="carousel">
           {carouseldata?.map((items, index) => {
             // console.log(items);

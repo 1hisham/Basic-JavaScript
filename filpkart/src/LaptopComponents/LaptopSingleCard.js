@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import ButtonLeft from "./ButtonLeft";
+import ButtonRight from "./ButtonRight";
 
 function LaptopSingleCard(props) {
   console.log(props.itemDetails, "----------------------");
   const itemdetails = props.itemDetails;
   return (
+
     <>
       <TotalCard>
+  <ButtonLeft />
+      <ButtonRight />
         {itemdetails?.map((item) => {
           console.log("item", item);
 
@@ -62,6 +67,7 @@ const DetailItems = styled.div`
 `;
 const TotalCard = styled.div`
   display: flex;
+  position: relative;
 `;
 
 export default LaptopSingleCard;

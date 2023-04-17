@@ -23,6 +23,8 @@ function Maincontainerpage() {
     <>
       <Fitcontent>
         <TotalItem data={data} />
+        <TotalItem data={data} />
+        <TotalItem data={datatwo} />
         <TotalItem data={datatwo} />
       </Fitcontent>
     </>

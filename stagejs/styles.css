@@ -1,0 +1,9 @@
+ul{
+    display: flex;
+}
+li{
+    font-size: 75px;
+    /* margin-inline: 52px; */
+    list-style: none;
+    width: 18%;
+}

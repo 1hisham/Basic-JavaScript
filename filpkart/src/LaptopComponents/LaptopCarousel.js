@@ -5,34 +5,59 @@ import styled from "styled-components";
 
 function LaptopCarousel() {
   const [carouseldata, setCarouseldata] = useState([]);
-  useEffect(() => {
-    let fetchdata = async () => {
-      try {
-        const respose = await fetch("./lapdata.json");
-        const json = await respose.json();
-        setCarouseldata(json.carousel);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
+  const [visibleIndex, setVisibleIndex] = useState(0);
+  const [transition, setTranstion] = useState(0.3);
+  const [time, setTime] = useState(1000);
 
+  let fetchdata = async () => {
+    try {
+      const respose = await fetch("./lapdata.json");
+      const json = await respose.json();
+      setCarouseldata(json.carousel);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+  useEffect(() => {
     fetchdata();
   }, []);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      UpdateIndex();
+    }, time);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [visibleIndex]);
 
-  let clickhandler = () => {
-    console.log("hello");
+  let UpdateIndex = () => {
+    if (visibleIndex == carouseldata?.length - 1) {
+      setTime(10);
+      setVisibleIndex(0);
+      setTranstion(0);
+    } else {
+      setVisibleIndex(visibleIndex + 1);
+      setTranstion(0.3);
+      setTime(1000);
+    }
   };
+
   return (
     <>
       <CarouselContainer>
         <ButtonLeft />
         <ButtonRight />
-        <SingleContainer>
+        <SingleContainer
+          style={{
+            transform: `translateX(-${visibleIndex * 100}%)`,
+            transition: `transform ${transition}s ease-in-out`,
+          }}
+        >
           {carouseldata?.map((item) => {
             return (
-              <div key={item.id} className="image-carousel-lap">
+              <Imagecontainer key={item.id}>
                 <img src={item.img} />
-              </div>
+              </Imagecontainer>
             );
           })}
         </SingleContainer>
@@ -43,18 +68,15 @@ function LaptopCarousel() {
 const CarouselContainer = styled.div`
   max-width: 1440px;
   overflow: hidden;
-  /* width: 100vw; */
   position: relative;
   margin: auto;
-  img {
-    display: flex;
-    /* width: 100vw; */
-  }
 `;
 const SingleContainer = styled.div`
   display: flex;
+  align-items: flex-start;
 `;
-/* .carousel-container-lap {
-} */
+const Imagecontainer = styled.div`
+  width: 100%;
+`;
 
 export default LaptopCarousel;

@@ -146,32 +146,39 @@
 
 
 // ceser something
+// let number  = 105%26
+// console.log(number);
+
 
 function toCecerCode(item,num){
+  num = num%26
+
+  
   let ascciArray=[]
   let ceserarray = []
   let wordsarray = item.split("")
-  console.log(wordsarray);
+  // console.log(wordsarray);
   
   wordsarray.forEach((word,idx) => {
     let ascci =item.charCodeAt(idx)
     ascciArray.push(ascci + num)
-    console.log(ascci);
+    // console.log(ascci);
   })
   ascciArray.forEach((code,idx) => {
     let toWords = String.fromCharCode(code)
     ceserarray.push(toWords)
 
   })
-  console.log("ceser:",ceserarray);
+  // console.log("ceser:",ceserarray);
   let codedItem = ceserarray.join('')
   return codedItem
   
   }
 
-console.log(toCecerCode("hello",2));
+console.log(toCecerCode("elephant",2));
 
 function fromCecercode(item,num){
+  num = num%26
   let ascciArray=[]
   let ceserarray = []
   let wordsarray = item.split("")
@@ -192,7 +199,7 @@ function fromCecercode(item,num){
   return codedItem
   
 }
-console.log(fromCecercode("jgnnq" , 2));
+console.log(fromCecercode("gngrjcpv" , 2));
 
 
 
