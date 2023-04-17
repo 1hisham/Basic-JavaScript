@@ -44,10 +44,10 @@ function Carousel() {
 
   return (
     <div className="full-carousel">
-      <div className="total-carousel" style={{
-        transform:`translateX(-${visibleIndex * 100}%)`,
-        transition:`translate${transition}s ease-in-out`,
-      }}>
+      <div className="total-carousel"  style={{
+            transform: `translateX(-${visibleIndex * 100}%)`,
+            transition: `transform ${transition}s ease-in-out`,
+          }}>
    
         <div className="carousel">
           {carouseldata?.map((items, index) => {
