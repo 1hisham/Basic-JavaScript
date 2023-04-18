@@ -3,21 +3,23 @@ import React from "react";
 import styled from "styled-components";
 
 function ItemCardHeading(props) {
+  
   const { itemheading, itemheadingimg } = props.data;
-
-  console.log(itemheading, "itemheading");
-
   return (
-    <div className="total-item-headig">
+    <TotalHeading>
       {
         <Headingbtn style={{ backgroundImage: `URL(${itemheadingimg})` }}>
           <span className="heading-content">{itemheading}</span>
           <button className="button-lap">view all</button>
         </Headingbtn>
       }
-    </div>
+    </TotalHeading>
   );
 }
+const TotalHeading = styled.div`
+position: relative;
+z-index:5;
+background:white;`
 
 const Headingbtn = styled.div`
   background-position: 0px bottom;

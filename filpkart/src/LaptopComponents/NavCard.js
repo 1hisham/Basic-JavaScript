@@ -7,7 +7,7 @@ function NavCard(props) {
     <Totalnavcards>
       {items?.map((item) => {
         return (
-          <div className="cards">
+          <Cards>
             <div className="item-image">
               <Outerimg src={item.imglink} />
             </div>
@@ -15,7 +15,7 @@ function NavCard(props) {
               {item.itemdetails}
               {item.list !== "" ? <InsideImg src={arrow} /> : <div></div>}
             </Description>
-          </div>
+          </Cards>
         );
       })}
     </Totalnavcards>
@@ -40,5 +40,7 @@ const InsideImg = styled.img`
   transform: rotate(270deg);
   margin-left: 5px;
 `;
+const Cards = styled.div`
+  cursor: pointer;`
 
 export default NavCard;

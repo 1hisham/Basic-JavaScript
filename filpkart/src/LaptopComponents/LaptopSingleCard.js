@@ -1,35 +1,65 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import ButtonLeft from "./ButtonLeft";
-import ButtonRight from "./ButtonRight";
+import ArrowButton from "./ArrowButton";
 
 function LaptopSingleCard(props) {
-  console.log(props.itemDetails, "----------------------");
   const itemdetails = props.itemDetails;
-  return (
+  const [state, setState] = useState(true);
+  const [trans, setTrans] = useState(0);
+  const [scroll, setScroll] = useState(5);
+  let TotalLength = itemdetails?.length;
 
+  const RigntMovement = () => {
+    setTrans(-230 * scroll);
+    setScroll(scroll + 4.5);
+    console.log(scroll, "this is scroll");
+
+    if (scroll >= TotalLength - 5) {
+      console.log("hello");
+      setScroll(5);
+      setState(false);
+      console.log(trans, "this is teansition");
+    }
+  };
+  console.log(scroll, "this is scroll");
+  console.log(trans, "this is teansition");
+
+  const LeftMovement = () => {
+    setTrans(trans + 230 * 4.5);
+    setScroll(scroll + 4.5);
+    console.log(scroll, "this is scroll");
+
+    if (scroll >= TotalLength) {
+      console.log("hello");
+      setState(true);
+    }
+  };
+  return (
     <>
       <TotalCard>
-  <ButtonLeft />
-      <ButtonRight />
-        {itemdetails?.map((item) => {
-          console.log("item", item);
-
-          return (
-            <>
-              <Card>
-                <ImageItem>
-                  <img src={item.itemImgage} />
-                </ImageItem>
-                <DetailItems>
-                  <span>{item.itemdetails}</span>
-                  <span>{item.itemOffers}</span>
-                </DetailItems>
-              </Card>
-            </>
-          );
-        })}
+        {state ? (
+          <ArrowButton isRight={true} onclick={RigntMovement} />
+        ) : (
+          <ArrowButton onclick={LeftMovement} />
+        )}
+        <TotalCardItems style={{ transform: `translateX(${trans}px)` }}>
+          {itemdetails?.map((item) => {
+            return (
+              <>
+                <Card>
+                  <ImageItem>
+                    <img src={item.itemImgage} />
+                  </ImageItem>
+                  <DetailItems>
+                    <span>{item.itemdetails}</span>
+                    <span>{item.itemOffers}</span>
+                  </DetailItems>
+                </Card>
+              </>
+            );
+          })}
+        </TotalCardItems>
       </TotalCard>
     </>
   );
@@ -67,7 +97,10 @@ const DetailItems = styled.div`
 `;
 const TotalCard = styled.div`
   display: flex;
-  position: relative;
+`;
+const TotalCardItems = styled.div`
+  display: flex;
+  transition: transform 1s ease;
 `;
 
 export default LaptopSingleCard;

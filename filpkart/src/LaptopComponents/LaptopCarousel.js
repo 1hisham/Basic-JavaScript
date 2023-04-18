@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ButtonLeft from "./ButtonLeft";
-import ButtonRight from "./ButtonRight";
 import styled from "styled-components";
+import ArrowButton from "./ArrowButton";
 
 function LaptopCarousel() {
   const [carouseldata, setCarouseldata] = useState([]);
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [transition, setTranstion] = useState(0.3);
-  const [time, setTime] = useState(1000);
+  const [time, setTime] = useState(10000);
 
   let fetchdata = async () => {
     try {
@@ -38,15 +37,34 @@ function LaptopCarousel() {
     } else {
       setVisibleIndex(visibleIndex + 1);
       setTranstion(0.3);
-      setTime(1000);
+      setTime(2000);
     }
+  };
+  let Leftclick = () => {
+    if (visibleIndex === 0) {
+      setVisibleIndex(carouseldata?.length - 1);
+      setTranstion(0);
+    } else{
+      setVisibleIndex(visibleIndex - 1);
+      setTranstion(0.3);
+    }
+
   };
 
   return (
     <>
       <CarouselContainer>
-        <ButtonLeft />
-        <ButtonRight />
+        <ArrowButton
+          isRight={true}
+          onclick={() => {
+            UpdateIndex();
+          }}
+        />
+        <ArrowButton
+          onclick={() => {
+            Leftclick();
+          }}
+        />
         <SingleContainer
           style={{
             transform: `translateX(-${visibleIndex * 100}%)`,

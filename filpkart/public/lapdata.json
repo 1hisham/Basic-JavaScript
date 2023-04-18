@@ -62,6 +62,7 @@
     }
   ],
   "carousel": [
+  
     {
       "img": "https://rukminim1.flixcart.com/fk-p-flap/1688/280/image/fef1c23137a2e722.jpg?q=50",
       "id": 1
@@ -140,6 +141,54 @@
         },
         {
           "id": 8,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/kx50gi80/projector/r/9/p/zeb-pixa-play-12-5-6-dobly-audio-led-projector-zebronics-original-imag9z3yujqmzqt4.jpeg?q=70",
+          "itemdetails": "Projectors",
+          "itemOffers": "From $99",
+          "itemdiscription": "ZEBRONICS"
+        },   {
+          "id": 9,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/printer/j/j/y/hp-laserjet-m1005-multifunction-original-imadxhzpeb9qbrfg.jpeg?q=70",
+          "itemdetails": "Printers",
+          "itemOffers": "From $55",
+          "itemdiscription": "This is a super item a high quality Printer "
+        },
+        {
+          "id": 10,
+          "itemImgage": "https://rukminim1.flixcart.com/image/400/400/xif0q/cases-covers/back-cover/j/i/6/mycas-black-vv-y35-qcase-original-imagj87uwxzarrzk.jpeg?q=70",
+          "itemdetails": "Plain cases & covers",
+          "itemOffers": "under $4",
+          "itemdiscription": "This is a super item a high quality covers "
+        },
+        {
+          "id": 11,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/kactpjk0/shaver/m/6/z/philips-s1121-45-s1121-45-original-imafry2qgxcwnm9r.jpeg?q=70",
+          "itemdetails": "Best of shavers",
+          "itemOffers": "From $99",
+          "itemdiscription": "Phillps & Havels "
+        },
+        {
+          "id": 12,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/xif0q/power-bank/j/i/v/power-bank-dx09-20000-mah-20000-dx09-20k-callmate-original-imagn22tuac3hqnz.jpeg?q=70",
+          "itemdetails": "Premium PowerBanks",
+          "itemOffers": "shope Now",
+          "itemdiscription": "mi, realme & more "
+        },
+        {
+          "id": 13,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/l5ld8y80/monitor/l/k/s/-original-imagg897ufhyvwqq.jpeg?q=70",
+          "itemdetails": "Mointers",
+          "itemOffers": "From $55",
+          "itemdiscription": "SAMSUNG"
+        },
+        {
+          "id": 14,
+          "itemImgage": "https://rukminim1.flixcart.com/image/200/200/klcmoi80/monitor/o/c/t/vg27aq-tuf-gaming-vg27aq-asus-original-imagyh3f2y99qrrg.jpeg?q=70",
+          "itemdetails": "ASUS Moniters",
+          "itemOffers": "$233",
+          "itemdiscription": "Top Rated"
+        },
+        {
+          "id": 15,
           "itemImgage": "https://rukminim1.flixcart.com/image/200/200/kx50gi80/projector/r/9/p/zeb-pixa-play-12-5-6-dobly-audio-led-projector-zebronics-original-imag9z3yujqmzqt4.jpeg?q=70",
           "itemdetails": "Projectors",
           "itemOffers": "From $99",

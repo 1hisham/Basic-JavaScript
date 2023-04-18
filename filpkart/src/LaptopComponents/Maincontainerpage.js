@@ -13,7 +13,6 @@ function Maincontainerpage() {
       setData(json.ProductDeatilsone);
       setDatatwo(json.ProductDeatilstwo);
     }
-    console.log(data, "this is daatta");
   };
   useEffect(() => {
     fetchData();
