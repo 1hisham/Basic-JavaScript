@@ -9,10 +9,14 @@ function LaptopSingleCard(props) {
   const [trans, setTrans] = useState(0);
   const [scroll, setScroll] = useState(5);
   let TotalLength = itemdetails?.length;
+  if((TotalLength - scroll) < 5){
+    let Lowlen = TotalLength - scroll
+    setScroll(Lowlen)
+  }
 
   const RigntMovement = () => {
     setTrans(-230 * scroll);
-    setScroll(scroll + 4.5);
+    setScroll(scroll + 5);
     console.log(scroll, "this is scroll");
 
     if (scroll >= TotalLength - 5) {
@@ -23,16 +27,20 @@ function LaptopSingleCard(props) {
     }
   };
   console.log(scroll, "this is scroll");
+  console.log(TotalLength,"this is total length");
+  
   console.log(trans, "this is teansition");
 
   const LeftMovement = () => {
-    setTrans(trans + 230 * 4.5);
-    setScroll(scroll + 4.5);
+    setTrans(trans +(5 * 230));
+    setScroll(scroll + 5);
     console.log(scroll, "this is scroll");
 
-    if (scroll >= TotalLength) {
+    if (scroll >= TotalLength - 5) {
       console.log("hello");
       setState(true);
+      setScroll(5)
+      setTrans(0)
     }
   };
   return (

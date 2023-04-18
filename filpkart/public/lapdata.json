@@ -258,6 +258,74 @@
         "itemdiscription": "ZEBRONICS"
       }
     ]
+  },"ProductDeatilsthree":  {
+    "itemheading": "Fashion Top Deals",
+    "itemheadingimg": "https://rukminim1.flixcart.com/fk-p-flap/278/278/image/31d46a8fd93eeedd.jpg?q=90",
+    "itemdetails": [
+      {
+        "id": 1,
+        "itemImgage": "https://rukminim1.flixcart.com/fk-p-flap/400/400/image/5aa98b7cee183286.jpg?q=70",
+        "itemdetails": "Geared Cycles",
+        "itemOffers": "shope Now",
+        "itemdiscription": "This is a super item a high quality lenses "
+      },
+      {
+        "id": 2,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/j5jx1u80/wallet-card-wallet/y/y/p/ryan-bf-fl-id-black-ml3729001-wallet-fossil-original-imaew79nnkzc5tjq.jpeg?q=70",
+        "itemdetails": "Printers",
+        "itemOffers": "From $55",
+        "itemdiscription": "This is a super item a high quality Printer "
+      },
+      {
+        "id": 3,
+        "itemImgage": "https://rukminim1.flixcart.com/image/400/400/kq18n0w0/tablet/p/f/u/za5g0176in-lenovo-original-imag4525frzw2qa7.jpeg?q=70",
+        "itemdetails": "Plain cases & covers",
+        "itemOffers": "under $4",
+        "itemdiscription": "This is a super item a high quality covers "
+      },
+      {
+        "id": 4,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/jv2p6kw0/stylus/m/p/8/pencil-2nd-gen-mu8f2zm-a-apple-original-imafg2dsgpu9pfgz.jpeg?q=70",
+        "itemdetails": "Best of shavers",
+        "itemOffers": "From $99",
+        "itemdiscription": "Phillps & Havels "
+      },
+      {
+        "id": 5,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/kl5hh8w0/puzzle/g/n/g/60-wooden-earth-jigsaw-puzzle-60-pcs-webby-original-imagyc8hsdztzdzb.jpeg?q=70",
+        "itemdetails": "Premium PowerBanks",
+        "itemOffers": "shope Now",
+        "itemdiscription": "mi, realme & more "
+      },
+      {
+        "id": 6,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/l5ld8y80/monitor/l/k/s/-original-imagg897ufhyvwqq.jpeg?q=70",
+        "itemdetails": "Mointers",
+        "itemOffers": "From $55",
+        "itemdiscription": "SAMSUNG"
+      },
+      {
+        "id": 7,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/klcmoi80/monitor/o/c/t/vg27aq-tuf-gaming-vg27aq-asus-original-imagyh3f2y99qrrg.jpeg?q=70",
+        "itemdetails": "ASUS Moniters",
+        "itemOffers": "$233",
+        "itemdiscription": "Top Rated"
+      },
+      {
+        "id": 8,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/kx50gi80/projector/r/9/p/zeb-pixa-play-12-5-6-dobly-audio-led-projector-zebronics-original-imag9z3yujqmzqt4.jpeg?q=70",
+        "itemdetails": "Projectors",
+        "itemOffers": "From $99",
+        "itemdiscription": "ZEBRONICS"
+      }, 
+      {
+        "id": 9,
+        "itemImgage": "https://rukminim1.flixcart.com/image/200/200/k6fd47k0/nut-dry-fruit/p/z/7/200-100-natural-california-pouch-happilo-original-imafzvw2tcazeur6.jpeg?q=70",
+        "itemdetails": "Projectors",
+        "itemOffers": "From $99",
+        "itemdiscription": "ZEBRONICS"
+      }
+    ]
   }
   
 }
