@@ -6,8 +6,10 @@ import { useState } from "react";
 function NavCard(props) {
   const [state, setState] = useState(false);
   const [dropdata, setDropData] = useState({});
+  const [findid, setFindid] = useState(0)
   const { items } = props;
   let clickhandler = (id) => {
+    setFindid(id)
     let hitItem = items.filter((ele) => {
       return ele.id == id;
     });
@@ -24,10 +26,12 @@ function NavCard(props) {
 
   return (
     <Totalnavcards>
+      
       {items?.map((item) => {
-        return (
+           
+            return (
           <Cards
-            id={item.id}
+            key={item.id}
             onMouseLeave={() => {
               removefuncion();
             }}
@@ -42,9 +46,11 @@ function NavCard(props) {
               {item.itemdetails}
               {item.list !== "" ? <InsideImg src={arrow} /> : <div></div>}
             </Description>
-            {state && <Navdropdown value={dropdata} />}
+            {item.id == findid  ?  <Navdropdown value={dropdata} /> : <div></div> }
+            {/* {state &&  <Navdropdown value={dropdata} />} */}
           </Cards>
         );
+        
       })}
     </Totalnavcards>
   );
@@ -71,6 +77,7 @@ const InsideImg = styled.img`
 const Cards = styled.div`
   cursor: pointer;
   position: relative;
+
 `;
 
 export default NavCard;
