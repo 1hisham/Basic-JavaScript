@@ -32,7 +32,7 @@ function LaptopCarousel() {
   let UpdateIndex = () => {
     if (visibleIndex == carouseldata?.length - 1) {
       setTime(10);
-      setVisibleIndex(0);
+      setVisibleIndex(1);
       setTranstion(0);
     } else {
       setVisibleIndex(visibleIndex + 1);
@@ -42,7 +42,7 @@ function LaptopCarousel() {
   };
   let Leftclick = () => {
     if (visibleIndex === 0) {
-      setVisibleIndex(carouseldata?.length - 1);
+      setVisibleIndex(carouseldata?.length - 2);
       setTranstion(0);
     } else{
       setVisibleIndex(visibleIndex - 1);
@@ -63,6 +63,7 @@ function LaptopCarousel() {
         <ArrowButton
           onclick={() => {
             Leftclick();
+            // UpdateIndex();
           }}
         />
         <SingleContainer

@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 function TotalItem({ data }) {
   return (
-    <Totalitem>
+    <Totalitem >
       <ItemCardHeading data={data} />
       <LaptopSingleCard itemDetails={data.itemdetails} ></LaptopSingleCard>
     </Totalitem>

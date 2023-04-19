@@ -2,7 +2,7 @@ import cart from "./../LaptopSvg/laptopcart.svg";
 
 import styled from "styled-components";
 
-function CartHeader() {
+function CartHeader() { 
   return (
     <TotalCardHeader>
       <img src={cart} />

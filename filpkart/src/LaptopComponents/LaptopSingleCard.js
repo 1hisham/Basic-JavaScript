@@ -1,46 +1,50 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
 import ArrowButton from "./ArrowButton";
 
 function LaptopSingleCard(props) {
   const itemdetails = props.itemDetails;
   const [state, setState] = useState(true);
+  // const [stateone, setStateone] = useState(false);
   const [trans, setTrans] = useState(0);
   const [scroll, setScroll] = useState(5);
+
+  const [width, setWidth] = useState(0);
+  const ref = useRef(0);
+  useEffect(() => {
+    setWidth(ref.current.clientWidth);
+  }, [itemdetails]);
+
   let TotalLength = itemdetails?.length;
-  if((TotalLength - scroll) < 5){
-    let Lowlen = TotalLength - scroll
-    setScroll(Lowlen)
+  if (TotalLength - scroll < 5) {
+    let Lowlen = TotalLength - scroll;
+    setScroll(Lowlen);
   }
 
+
   const RigntMovement = () => {
-    setTrans(-230 * scroll);
+    setTrans(-width * scroll);
     setScroll(scroll + 5);
     console.log(scroll, "this is scroll");
 
     if (scroll >= TotalLength - 5) {
-      console.log("hello");
       setScroll(5);
       setState(false);
-      console.log(trans, "this is teansition");
     }
   };
-  console.log(scroll, "this is scroll");
-  console.log(TotalLength,"this is total length");
-  
-  console.log(trans, "this is teansition");
+
+  // console.log(scroll, "this is scroll");
+  // console.log(TotalLength, "this is total length");
+  // console.log(trans, "this is teansition");
 
   const LeftMovement = () => {
-    setTrans(trans +(5 * 230));
+    setTrans(trans + 5 * width);
     setScroll(scroll + 5);
-    console.log(scroll, "this is scroll");
-
     if (scroll >= TotalLength - 5) {
-      console.log("hello");
       setState(true);
-      setScroll(5)
-      setTrans(0)
+      setScroll(5);
+      setTrans(0);
     }
   };
   return (
@@ -51,11 +55,15 @@ function LaptopSingleCard(props) {
         ) : (
           <ArrowButton onclick={LeftMovement} />
         )}
+        {/* {stateone && (
+          //  (<ArrowButton isRight={true} onclick={RigntMovement} />)
+          <ArrowButton onclick={LeftMovement} />
+        )} */}
         <TotalCardItems style={{ transform: `translateX(${trans}px)` }}>
           {itemdetails?.map((item) => {
             return (
               <>
-                <Card>
+                <Card ref={ref}>
                   <ImageItem>
                     <img src={item.itemImgage} />
                   </ImageItem>
