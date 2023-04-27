@@ -3,8 +3,6 @@ import ItemCardHeading from "./ItemCardHeading";
 import LaptopSingleCard from "./LaptopSingleCard";
 import styled from "styled-components";
 
-
-
 function TotalItem({ data }) {
   return (
     <Totalitem >

@@ -4,26 +4,25 @@ import Navdropdown from "./Navdropdown";
 import { useState } from "react";
 
 function NavCard(props) {
-  const [state, setState] = useState(false);
-  const [dropdata, setDropData] = useState({});
+  // const [state, setState] = useState(false);
+  const [dropdata, setDropData] = useState([]);
   const [findid, setFindid] = useState(0)
   const { items } = props;
   let clickhandler = (id) => {
     setFindid(id)
-    let hitItem = items.filter((ele) => {
+    let clickItem = items.filter((ele) => {
       return ele.id == id;
     });
-    if (hitItem[0].dropdown) {
-      console.log("item is here", hitItem[0].dropdown);
-      setState(true);
-      setDropData(hitItem[0].dropdown);
+    if (clickItem[0].dropdown) {
+      console.log("item is here", clickItem[0].dropdown);
+      setDropData(clickItem[0].dropdown);
     }
   };
   let removefuncion = () => {
-    setState(false);
-    setDropData({});
+    setDropData([]);
   };
-
+ console.log(dropdata,"dep[ data");
+ 
   return (
     <Totalnavcards>
       

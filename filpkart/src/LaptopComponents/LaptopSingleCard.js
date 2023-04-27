@@ -6,64 +6,82 @@ import ArrowButton from "./ArrowButton";
 function LaptopSingleCard(props) {
   const itemdetails = props.itemDetails;
   const [state, setState] = useState(true);
-  // const [stateone, setStateone] = useState(false);
-  const [trans, setTrans] = useState(0);
+  const [translation, setTranslation] = useState(0);
   const [scroll, setScroll] = useState(5);
-
-  const [width, setWidth] = useState(0);
-  const ref = useRef(0);
+  const [widthCard, setWidthCard] = useState(0);
+  // const [stateone, setStateone] = useState(false)
+  // const [stateTwo, setStaeTwo] = useState(true)
+  const refCard = useRef(0);
+  let stateone = false
+  let stateTwo = true
+  
+  let Totaltransion = (Math.abs(translation) + 1150)
   useEffect(() => {
-    setWidth(ref.current.clientWidth);
+    setWidthCard(refCard.current.clientWidth);
+    
   }, [itemdetails]);
 
   let TotalLength = itemdetails?.length;
   if (TotalLength - scroll < 5) {
+    
     let Lowlen = TotalLength - scroll;
     setScroll(Lowlen);
   }
+  console.log(Totaltransion);
+  
+
+    if (Totaltransion !== (widthCard*TotalLength) && translation !== 0){
+      stateone =true
+      stateTwo = false  
+    }
+
+  
+
 
 
   const RigntMovement = () => {
-    setTrans(-width * scroll);
+    setTranslation(-widthCard * scroll);
     setScroll(scroll + 5);
     console.log(scroll, "this is scroll");
-
     if (scroll >= TotalLength - 5) {
       setScroll(5);
       setState(false);
+      
+    }else{
+
     }
   };
 
-  // console.log(scroll, "this is scroll");
-  // console.log(TotalLength, "this is total length");
-  // console.log(trans, "this is teansition");
+
+  console.log(widthCard,"this is width");
+  console.log(scroll, "this is scroll");
+  console.log(TotalLength, "this is total length");
+
 
   const LeftMovement = () => {
-    setTrans(trans + 5 * width);
+    setTranslation(translation + 5 * widthCard);
     setScroll(scroll + 5);
     if (scroll >= TotalLength - 5) {
       setState(true);
       setScroll(5);
-      setTrans(0);
+      setTranslation(0);
     }
   };
   return (
     <>
       <TotalCard>
-        {state ? (
+      { stateTwo &&( state ? (
           <ArrowButton isRight={true} onclick={RigntMovement} />
         ) : (
           <ArrowButton onclick={LeftMovement} />
-        )}
-        {/* {stateone && (
-          //  (<ArrowButton isRight={true} onclick={RigntMovement} />)
-          <ArrowButton onclick={LeftMovement} />
-        )} */}
-        <TotalCardItems style={{ transform: `translateX(${trans}px)` }}>
+        ))}
+        {stateone && <ArrowButton isRight={true} onclick={RigntMovement} />} {stateone && <ArrowButton onclick={LeftMovement} />}
+        
+        <TotalCardItems style={{ transform: `translateX(${translation}px)` }}>
           {itemdetails?.map((item) => {
             return (
               <>
-                <Card ref={ref}>
+                <Card ref={refCard} >
                   <ImageItem>
                     <img src={item.itemImgage} />
                   </ImageItem>

@@ -3,43 +3,54 @@ import styled from "styled-components";
 import DropdownInside from "../components/DropdownInside";
 
 function Navdropdown(props) {
-  let [subitem, setSubitem] = useState("item1");
-  let mainitems = props?.value.mainitems;
-  let clickhandler = (index) => {
-    console.log(index);
+  let mainitems = props.value;
+  console.log(mainitems, "this is main items");
 
-    setSubitem(mainitems[index]);
+  let [subitem, setSubitem] = useState();
+  let clickhandler = (item) => {
+    setSubitem(item);
   };
+  let RemoveFn = () => {
+    setSubitem();
+  };
+  
+  console.log(subitem, "this is the sub item");
 
   return (
     <>
-      <Test>
-        {mainitems?.map((item, index) => {
+      <Test onMouseLeave={() => {RemoveFn()}}>
+        <Toflex >
+        {mainitems?.map((item) => {
           return (
             <MainList>
               <li
-                onClick={() => {
-                  clickhandler(index);
+                onMouseOver={() => {
+                  clickhandler(item);
                 }}
+              
               >
-                {item}
+                {item.mainitems}
               </li>
             </MainList>
           );
         })}
-        <DropdownInside value={props.value} area={subitem} />
+        </Toflex>
+        <DropdownInside value={subitem} />
       </Test>
     </>
   );
 }
 const Test = styled.div`
-  font-size: 50px;
-  background: red;
+  font-size: 20px;
+  background:  #f9f9f9;
   position: absolute;
   z-index: 10;
+  display: flex;
 `;
 const MainList = styled.div`
   font-size: 50px;
 `;
+const Toflex = styled.div`
+`
 
 export default Navdropdown;

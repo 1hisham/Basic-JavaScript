@@ -1,22 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from "styled-components";
 
 function DropdownInside(props) {
-     let item = props?.value.item3
-     let areas = props?.area
-     
-     console.log(item);
-     
-     
-    
-    
-  return (
-    // <></>
-  
-   
-    <Total>{item?.map((seb) => {
-        return <List>{seb}</List>
+
+  let item = props?.value?.list
+     return (
+          
+    <Total>{item?.map((sub) => {
+        return(
+          <List >{sub}</List>
+        ) 
     })}</Total>
+    
   )
 }
 const List = styled.li`

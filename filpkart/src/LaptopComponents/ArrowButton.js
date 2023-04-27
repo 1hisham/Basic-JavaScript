@@ -45,3 +45,7 @@ const Left = styled.button`
 
 
 export default ArrowButton;
+// "mainitems": ["Men's Top Wear", "Men Footerware", "Women Western"],
+// "Men's Top Wear": ["all", "Men's T-shirt", "Men's Casual Shirts"],
+// "Men's T-shirt": ["all", "Men's Casual Shoes", "Men's Sports"],
+// "Women Western": ["Women Tops", "Women Dresses", "Women T-shirts"]

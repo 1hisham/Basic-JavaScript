@@ -7,6 +7,7 @@ function LaptopCarousel() {
   const [visibleIndex, setVisibleIndex] = useState(0);
   const [transition, setTranstion] = useState(0.3);
   const [time, setTime] = useState(10000);
+  const [flag, setFlag] = useState(false);
 
   let fetchdata = async () => {
     try {
@@ -22,7 +23,10 @@ function LaptopCarousel() {
   }, []);
   useEffect(() => {
     const interval = setInterval(() => {
-      UpdateIndex();
+      {
+        flag ? Leftclick() : UpdateIndex();
+      }
+      setFlag(false);
     }, time);
     return () => {
       clearInterval(interval);
@@ -42,13 +46,15 @@ function LaptopCarousel() {
   };
   let Leftclick = () => {
     if (visibleIndex === 0) {
+      setTime(10);
       setVisibleIndex(carouseldata?.length - 2);
       setTranstion(0);
-    } else{
+      setFlag(true);
+    } else {
       setVisibleIndex(visibleIndex - 1);
       setTranstion(0.3);
+      setTime(2000);
     }
-
   };
 
   return (
