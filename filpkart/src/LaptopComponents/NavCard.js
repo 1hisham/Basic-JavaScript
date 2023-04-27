@@ -4,7 +4,6 @@ import Navdropdown from "./Navdropdown";
 import { useState } from "react";
 
 function NavCard(props) {
-  // const [state, setState] = useState(false);
   const [dropdata, setDropData] = useState([]);
   const [findid, setFindid] = useState(0)
   const { items } = props;
@@ -21,8 +20,7 @@ function NavCard(props) {
   let removefuncion = () => {
     setDropData([]);
   };
- console.log(dropdata,"dep[ data");
- 
+
   return (
     <Totalnavcards>
       
@@ -46,7 +44,6 @@ function NavCard(props) {
               {item.list !== "" ? <InsideImg src={arrow} /> : <div></div>}
             </Description>
             {item.id == findid  ?  <Navdropdown value={dropdata} /> : <div></div> }
-            {/* {state &&  <Navdropdown value={dropdata} />} */}
           </Cards>
         );
         
