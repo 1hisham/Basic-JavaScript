@@ -43,7 +43,7 @@ function NavCard(props) {
               {item.itemdetails}
               {item.list !== "" ? <InsideImg src={arrow} /> : <div></div>}
             </Description>
-            {item.id == findid  ?  <Navdropdown value={dropdata} /> : <div></div> }
+            {item.id == findid  ?  <Navdropdown value={findid} /> : <div></div> }
           </Cards>
         );
         

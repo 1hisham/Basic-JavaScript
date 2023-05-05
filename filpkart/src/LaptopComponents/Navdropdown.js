@@ -3,8 +3,27 @@ import styled from "styled-components";
 import DropdownInside from "../components/DropdownInside";
 
 function Navdropdown(props) {
+  const [dropitem, setDropitem]
   let mainitems = props.value;
   console.log(mainitems, "this is main items");
+
+  let fetchdata = async () => {
+    try {
+      const respose = await fetch(`./lapdata.json`);
+      const json = await respose.json();
+      setDropitem(json.laptopNav);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
+  ////get the find id and move to fetch
+
+
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
   let [subitem, setSubitem] = useState();
   let [actives, setActives] = useState("");
@@ -28,7 +47,7 @@ function Navdropdown(props) {
         }}
       >
         <Toflex>
-          {mainitems?.map((item, index) => {
+          {/* {mainitems?.map((item, index) => {
             return (
               <MainList>
                 <List
@@ -42,7 +61,7 @@ function Navdropdown(props) {
                 </List>
               </MainList>
             );
-          })}
+          })} */}
         </Toflex>
         <DropdownInside value={subitem} />
       </Test>
