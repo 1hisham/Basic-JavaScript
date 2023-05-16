@@ -11,31 +11,30 @@
       "list": "<",
       "imglink": "https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100",
       "itemdetails": "Mobiles"
-     
     },
     {
       "id": 3,
       "list": "",
       "imglink": "https://rukminim1.flixcart.com/fk-p-flap/128/128/image/d34810848b2895c9.png?q=100",
       "itemdetails": "Fashion",
-      "dropdown": [ 
+      "dropdown": [
         {
-        "mainitems": ["item1"],
-         "list" : ["item1sub1","item1sub2", "item1sub2" ,"item1sub4"]
-      },
-      {
-        "mainitems": ["item2"],
-         "list" : ["item2sub1","item2sub2", "item2sub2" ,"item2sub4"]
-      },
-      {
-        "mainitems": ["item3"],
-         "list" : ["item3sub1","item3sub2", "item3sub2" ,"item3sub4"]
-      },
-      {
-        "mainitems": ["item4"],
-         "list" : ["item4sub1","item4sub2", "item4sub2" ,"item4sub4"]
-      }
-    ]
+          "category": "item1",
+          "subCategories": ["item1sub1", "item1sub2", "item1sub2", "item1sub4"]
+        },
+        {
+          "category": "item2",
+          "subCategories": ["item2sub1", "item2sub2", "item2sub2", "item2sub4"]
+        },
+        {
+          "mainitems": "item3",
+          "list": ["item3sub1", "item3sub2", "item3sub2", "item3sub4"]
+        },
+        {
+          "mainitems": ["item4"],
+          "list": ["item4sub1", "item4sub2", "item4sub2", "item4sub4"]
+        }
+      ]
     },
     {
       "id": 4,
@@ -60,24 +59,24 @@
       "list": "<",
       "imglink": "https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100",
       "itemdetails": "Travel",
-      "dropdown": [ 
+      "dropdown": [
         {
-        "mainitems": ["item1"],
-         "list" : ["item1sub1","item1sub2", "item1sub2" ,"item1sub4"]
-      },
-      {
-        "mainitems": ["item2"],
-         "list" : ["item2sub1","item2sub2", "item2sub2" ,"item2sub4"]
-      },
-      {
-        "mainitems": ["item3"],
-         "list" : ["item3sub1","item3sub2", "item3sub2" ,"item3sub4"]
-      },
-      {
-        "mainitems": ["item4"],
-         "list" : ["item4sub1","item4sub2", "item4sub2" ,"item4sub4"]
-      }
-    ]
+          "mainitems": ["item1"],
+          "list": ["item1sub1", "item1sub2", "item1sub2", "item1sub4"]
+        },
+        {
+          "mainitems": ["item2"],
+          "list": ["item2sub1", "item2sub2", "item2sub2", "item2sub4"]
+        },
+        {
+          "mainitems": ["item3"],
+          "list": ["item3sub1", "item3sub2", "item3sub2", "item3sub4"]
+        },
+        {
+          "mainitems": ["item4"],
+          "list": ["item4sub1", "item4sub2", "item4sub2", "item4sub4"]
+        }
+      ]
     },
     {
       "id": 8,
@@ -303,7 +302,6 @@
         "itemOffers": "From $99",
         "itemdiscription": "ZEBRONICS"
       }
- 
     ]
   },
   "ProductDeatilstwo": {
