@@ -275,7 +275,7 @@
 //         smallest = array[i]
 //         array[i] = array[j]
 //         array[j] = smallest
-        
+
 //     }
 //     j++
 // }
@@ -287,32 +287,101 @@
 
 // console.log(array);
 
-let array =[2,5,6,8,9,1,4]
-let state = 1;
+//  BUBLE SORT
 
-function foo(ind) {
-  state = 1;
-  let i = 0;
-  while (i < array.length) {
-    if (array[i] > array[i + 1]) {
-      store = array[i];
-      array[i] = array[i + 1];
-      array[i + 1] = store;
-      state = 0;
-    }
-    i++;
+// let array =[2,5,6,8,9,1,4]
+// let state = 1;
+
+// function foo(ind) {
+//   state = 1;
+//   let i = 0;
+//   while (i < array.length) {
+//     if (array[i] > array[i + 1]) {
+//       store = array[i];
+//       array[i] = array[i + 1];
+//       array[i + 1] = store;
+//       state = 0;
+//     }
+//     i++;
+//   }
+//   return array;
+// }
+
+//   while (1) {
+//       foo();
+
+//       if (state == 1) {
+//           console.log(array,"array");
+
+//           break;
+//         }
+//     }
+
+// console.log(foo());
+
+// BUBLE SORTING SIMPLE
+
+// let array = [2, 5, 6, 8, 9, 1, 4];
+// let state = 1;
+
+// while (1) {
+//   state = 1;
+//   let i = 0;
+//   while (i < array.length) {
+//     if (array[i] > array[i + 1]) {
+//       store = array[i];
+//       array[i] = array[i + 1];
+//       array[i + 1] = store;
+//       state = 0;
+//     }
+//     i++;
+//   }
+//   if (state == 1) {
+//     console.log(array, "array");  
+//     break;
+//   }
+// }
+
+
+const array = [ 2,5,6,11,-1,8,9,5,2,1,3,4]
+const targetValue = 10;
+// let total = 0
+// let submitArray = []
+let pos =0
+// while(pos < array.length){
+//   let i = pos+1;
+//   while(i < array.length){
+//     total = array[pos] + array[i]
+//     if(total == targetValue){
+//         submitArray.push([array[pos],array[i]])
+//     } 
+//     total = 0
+//   i++
+//   }
+// pos++
+// } 
+// console.log(submitArray);
+
+partnerObj = {}
+
+let finalArray = []
+
+while (pos < array.length) {
+  let sumArray = []
+
+  if (array[pos] in partnerObj) {
+    sumArray[0] = array[pos]
+    sumArray[1] = partnerObj[array[pos]]
+    finalArray.push(sumArray)
+    pos++ 
+    continue
   }
-  return array;
+
+  partner = targetValue - array[pos]
+  partnerObj[partner] = array[pos]
+
+  pos++ 
+
 }
-
-  while (1) {
-      foo();
-
-      if (state == 1) {
-          console.log(array,"array");
-          
-          break;
-        }
-    }
-
-console.log(foo());
+console.log(partnerObj)
+console.log(finalArray)
