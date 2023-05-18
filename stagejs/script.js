@@ -343,11 +343,11 @@
 // }
 
 
-const array = [ 2,5,6,11,-1,8,9,5,2,1,3,4]
-const targetValue = 10;
-// let total = 0
-// let submitArray = []
-let pos =0
+// const array = [ 2,5,6,11,-1,8,9,5,2,1,3,4]
+// const targetValue = 10;
+// // let total = 0
+// // let submitArray = []
+// let pos =0
 // while(pos < array.length){
 //   let i = pos+1;
 //   while(i < array.length){
@@ -362,26 +362,45 @@ let pos =0
 // } 
 // console.log(submitArray);
 
-partnerObj = {}
+// partnerObj = {}
 
-let finalArray = []
+// let finalArray = []
 
-while (pos < array.length) {
-  let sumArray = []
+// while (pos < array.length) {
+//   let sumArray = []
 
-  if (array[pos] in partnerObj) {
-    sumArray[0] = array[pos]
-    sumArray[1] = partnerObj[array[pos]]
-    finalArray.push(sumArray)
-    pos++ 
-    continue
+//   if (array[pos] in partnerObj) {
+//     sumArray[0] = array[pos]
+//     sumArray[1] = partnerObj[array[pos]]
+//     finalArray.push(sumArray)
+//     pos++ 
+//     continue
+//   }
+
+//   partner = targetValue - array[pos]
+//   partnerObj[partner] = array[pos]
+
+//   pos++ 
+
+// }
+// console.log(partnerObj)
+// console.log(finalArray)
+
+
+const array = [2 ,3 ,6 , 4, 5, 2, 9, 2, 6]
+let ToMove = 2
+let i = 0;
+array[array.length ] = 5
+console.log(array);
+
+
+while(i < array.length){
+  if(array[i] == ToMove){
+    
+  }else{
+
+    
   }
-
-  partner = targetValue - array[pos]
-  partnerObj[partner] = array[pos]
-
-  pos++ 
-
+  i++
 }
-console.log(partnerObj)
-console.log(finalArray)
+
