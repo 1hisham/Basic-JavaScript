@@ -337,11 +337,10 @@
 //     i++;
 //   }
 //   if (state == 1) {
-//     console.log(array, "array");  
+//     console.log(array, "array");
 //     break;
 //   }
 // }
-
 
 // const array = [ 2,5,6,11,-1,8,9,5,2,1,3,4]
 // const targetValue = 10;
@@ -354,12 +353,12 @@
 //     total = array[pos] + array[i]
 //     if(total == targetValue){
 //         submitArray.push([array[pos],array[i]])
-//     } 
+//     }
 //     total = 0
 //   i++
 //   }
 // pos++
-// } 
+// }
 // console.log(submitArray);
 
 // partnerObj = {}
@@ -373,34 +372,122 @@
 //     sumArray[0] = array[pos]
 //     sumArray[1] = partnerObj[array[pos]]
 //     finalArray.push(sumArray)
-//     pos++ 
+//     pos++
 //     continue
 //   }
 
 //   partner = targetValue - array[pos]
 //   partnerObj[partner] = array[pos]
 
-//   pos++ 
+//   pos++
 
 // }
 // console.log(partnerObj)
 // console.log(finalArray)
 
+// const array = [2 ,3 ,6 , 4, 5, 2, 9, 2, 6]
+// let ToMove = 2
+// let i = 0;
+// array[array.length ] = 5
+// console.log(array);
 
-const array = [2 ,3 ,6 , 4, 5, 2, 9, 2, 6]
-let ToMove = 2
-let i = 0;
-array[array.length ] = 5
-console.log(array);
+// while(i < array.length){
+//   if(array[i] == ToMove){
 
+//   }else{
 
-while(i < array.length){
-  if(array[i] == ToMove){
-    
+//   }
+//   i++
+// }
+let state = "";
+let arr = [];
+
+// if(1){
+//   console.log("1");
+// }
+// if(0){
+//   console.log("2");
+
+// }
+// if(2){
+//   console.log("3");
+
+// }
+// if("state"){
+//   console.log("4");
+
+// }
+// if(state){
+//    console.log("5");
+
+// }
+// if(null){
+//   console.log("6");
+
+// }
+// if(arr){
+//   console.log("7");
+
+// }
+// let x= 3;
+// let y = 3
+// console.log(x++, 'x',++y,"y");
+
+// console.log(++x,y++);
+
+// let i = 0
+// while(1){
+
+//   ++i
+//   console.log(i);
+//   if( i ==  100){
+
+//   break
+// }
+// }
+// let count = 0
+// for(let i = 0 ; i <2 ; i++){
+
+//   count++
+//   for(i=0 ; i < 2; i++){
+
+//     for (i = 0; i < 2; i++){
+
+//     }
+//   }
+// }
+// console.log(count);
+// let box = 0
+// let i = 0;
+// while ( i < array.length){
+  //   let j = i+1 ;
+  //   while(j < array.length){
+    //       if(array[i] > array[j]){
+      //         box = array[j]
+      //         array[j] = array[i]
+      //         array[i] = box
+      
+      //       }
+      //     j++
+      //   }
+      //   i++
+      // }
+      let count =0
+      let searchNumber = 1
+      let array = [1,2,3,4,5,6,7,9];
+let j = Math.floor(array.length / 2)
+console.log(array[j]);
+
+while(j < array.length){  
+  console.log(count++,"count");
+  
+  if(array[j] == searchNumber){
+    console.log(j);
+    break
+  }else if( array[j] > searchNumber ){
+    j = Math.floor(j/2)
   }else{
-
-    
+    j= Math.floor( j + j /2 )
   }
-  i++
+ 
 }
-
