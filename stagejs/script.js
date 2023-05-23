@@ -399,8 +399,8 @@
 //   }
 //   i++
 // }
-let state = "";
-let arr = [];
+// let state = "";
+// let arr = [];
 
 // if(1){
 //   console.log("1");
