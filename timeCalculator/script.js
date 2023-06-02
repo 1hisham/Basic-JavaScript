@@ -54,6 +54,9 @@ const locJs = document.querySelector(".js-loc")
 const locCss = document.querySelector(".css-loc")
 
 
+
+console.log(locCss);
+
 submitBtn.addEventListener("click", () => {
 
   let obj = {
