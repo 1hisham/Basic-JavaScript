@@ -157,7 +157,8 @@ function calculateLineOfCode(objLoc){
   let newJs = Number(items.locJs) + Number(objLoc.locJs)
   let newCss = Number(items.locCss) + Number(objLoc.locCss)
   let allTotal = Number(items.locTotal + Number(objLoc.locTotal))
- 
+   console.log(allTotal);
+   
   let newObjLoc = {
     locHtml: newHtml,
     locJs: newJs,
