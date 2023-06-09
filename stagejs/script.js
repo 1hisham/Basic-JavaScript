@@ -92,6 +92,7 @@
 //         return data;});
 // }
 
+// consloe.log(data)
 // // fetchDemo().then(function(result) {
 // //     console.log(result);
 // //     console.log("hii");
