@@ -175,7 +175,7 @@ function getDataFormLocal(timeData, lineData){
   const statusLines = localStorage.getItem("lineOfCodes");
   const totalLines = JSON.parse(statusLines);
   console.log(timeData, totalTime)
-  console.log(lineData, totalLines)
+  
 
   let html = `
   <div class="total-card-out">
