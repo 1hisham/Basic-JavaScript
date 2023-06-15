@@ -174,7 +174,7 @@ function getDataFormLocal(timeData, lineData){
   const totalTime = JSON.parse(statusTime)
   const statusLines = localStorage.getItem("lineOfCodes");
   const totalLines = JSON.parse(statusLines);
-  console.log(timeData, totalTime)
+ 
   
 
   let html = `
