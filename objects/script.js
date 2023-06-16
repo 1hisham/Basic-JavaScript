@@ -1,5 +1,6 @@
 
 
 let  object = {
-    car : "ford"
+    car : "ford",
+    bike: "hero-honda"
 }
