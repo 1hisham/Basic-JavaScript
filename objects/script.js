@@ -3,7 +3,7 @@
 let  object = {
     car : ["ford","tata"],
     bike: ["hero-honda","tvs"],
-    truck: "barath Bens",
+    truck: ["barath Bens","eicher"]
     bus: "Volvo",
     
 }
