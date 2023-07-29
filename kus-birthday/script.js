@@ -40,32 +40,35 @@ const holidays = [
 
 ];
 function findSuitableDate(birthday, holidays) {
- let date = new Date(birthday)
- let birthDay = date.toISOString().slice(0,10)
- let suitableDate = birthDay
- let toVaildDay = date.getDay()
- if( toVaildDay == 0){
-   suitableDate = new Date(date.setDate(date.getDate()+ (6))).toISOString().slice(0,10)
+  let date = new Date(birthday)
+  let birthDay = date.toISOString().slice(0,10)
+  let suitableDate = birthDay
+  let toVaildDay = date.getDay()
+  if( toVaildDay == 0){
+    suitableDate = new Date(date.setDate(date.getDate()+ (6))).toISOString().slice(0,10)
   }else{
     suitableDate = new Date(date.setDate(date.getDate()+ (6-toVaildDay))).toISOString().slice(0,10)
   }
-let i = 0
- while(i < holidays.length){ 
- let suitableDateFormat = new Date(suitableDate) 
- let day = suitableDateFormat.getDay()
-  if(suitableDate < birthDay){
-    suitableDate = new Date(date.setDate(date.getDate()+ (6-day)+7)).toISOString().slice(0,10)
+
+  
+  let i = 0
+  while(i < holidays.length){ 
+    let suitableDateFormat = new Date(suitableDate) 
+    let day = suitableDateFormat.getDay()
+    if(suitableDate < birthDay){
+      suitableDate = new Date(date.setDate(date.getDate()+ (6-day)+7)).toISOString().slice(0,10)
+    }
+    if(day == 1){
+      suitableDate = new Date(date.setDate(date.getDate()+ 12)).toISOString().slice(0,10)
+    }
+    if(suitableDate == holidays[i]){
+      suitableDate = new Date(date.setDate(date.getDate()- 1)).toISOString().slice(0,10);
+      i=0
+    }
+
+    i++
   }
-  if(day == 1){
-    suitableDate = new Date(date.setDate(date.getDate()+ 12)).toISOString().slice(0,10)
-  }
-  if(suitableDate == holidays[i]){
-    suitableDate = new Date(date.setDate(date.getDate()- 1)).toISOString().slice(0,10);
-    i=0
-  }
-i++
-}
-console.log(suitableDate);
+  console.log(suitableDate);
 }
 findSuitableDate(birthDay, holidays) 
 
