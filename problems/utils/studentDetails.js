@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StudentDetails = void 0;
-function StudentDetails(classObj) {
+exports.studentDetails = void 0;
+function studentDetails(classObj) {
     let studentObject = {};
     let allsubject = [];
     let totalNumberOfSubject = 0;
@@ -20,11 +20,18 @@ function StudentDetails(classObj) {
         });
         HighestMarkOfAllsubject = HighestMarkInSubject * totalNumberOfSubject;
         averageMark = totalMark / totalNumberOfSubject;
-        percentageOfStudent = totalMark / HighestMarkOfAllsubject * 100;
-        studentObject[studentName] = { "studentId": studentId, "studentSubjects": allsubject, "averageMarkOfStudent": averageMark, "percentageOfStudent": percentageOfStudent, "studentSubjectDetails": student.marks };
+        percentageOfStudent = (totalMark / HighestMarkOfAllsubject) * 100;
+        studentObject[studentName] = {
+            studentId: studentId,
+            studentSubjects: allsubject,
+            totalMark: totalMark,
+            averageMarkOfStudent: averageMark,
+            percentageOfStudent: percentageOfStudent,
+            studentSubjectDetails: student.marks,
+        };
         allsubject = [];
         totalMark = 0;
     });
     return studentObject;
 }
-exports.StudentDetails = StudentDetails;
+exports.studentDetails = studentDetails;
