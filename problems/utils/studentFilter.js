@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.studetnFilter = void 0;
+exports.studentFilter = void 0;
 const studentDetails_1 = require("./studentDetails");
-function studetnFilter(filterMark, classObj, subject = "") {
+function studentFilter(filterMark, classObj, subject = "", filterItem) {
     let filtedItems = [];
     let studentDetail = (0, studentDetails_1.studentDetails)(classObj);
     classObj.students.forEach((student) => {
@@ -16,11 +16,23 @@ function studetnFilter(filterMark, classObj, subject = "") {
             }
         });
         if (subject == "") {
-            if (studentDetail[student.name].totalMark === filterMark) {
-                filtedItems.push(student.name);
+            if (filterItem == "totalMark") {
+                if (studentDetail[student.name].totalMark === filterMark) {
+                    filtedItems.push(student.name);
+                }
+            }
+            if (filterItem == "averageMark") {
+                if (studentDetail[student.name].averageMarkOfStudent == filterMark) {
+                    filtedItems.push(student.name);
+                }
+            }
+            if (filterItem == "percentage") {
+                if (studentDetail[student.name].percentageOfStudent == filterMark) {
+                    filtedItems.push(student.name);
+                }
             }
         }
     });
     return filtedItems;
 }
-exports.studetnFilter = studetnFilter;
+exports.studentFilter = studentFilter;

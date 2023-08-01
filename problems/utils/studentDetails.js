@@ -4,6 +4,7 @@ exports.studentDetails = void 0;
 function studentDetails(classObj) {
     let studentObject = {};
     let allsubject = [];
+    let allMarks = [];
     let totalNumberOfSubject = 0;
     let totalMark = 0;
     let averageMark = 0;
@@ -15,6 +16,7 @@ function studentDetails(classObj) {
         let studentId = student.id;
         student.marks.forEach((item, index) => {
             allsubject.push(item.subject);
+            allMarks.push(item.mark);
             totalMark = totalMark + item.mark;
             totalNumberOfSubject = index + 1;
         });
@@ -24,11 +26,13 @@ function studentDetails(classObj) {
         studentObject[studentName] = {
             studentId: studentId,
             studentSubjects: allsubject,
+            allMarks: allMarks,
             totalMark: totalMark,
             averageMarkOfStudent: averageMark,
             percentageOfStudent: percentageOfStudent,
             studentSubjectDetails: student.marks,
         };
+        allMarks = [];
         allsubject = [];
         totalMark = 0;
     });

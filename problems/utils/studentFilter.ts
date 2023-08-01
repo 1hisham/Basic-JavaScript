@@ -1,10 +1,11 @@
 import { studentDetails } from "./studentDetails";
 
 
-function studetnFilter(
+function studentFilter(
   filterMark: number,
   classObj: ClassObj,
-  subject: string = ""
+  subject: string = "",
+  filterItem: string
 ) {
   let filtedItems:Array<string> = [];
   let studentDetail = studentDetails(classObj)
@@ -19,11 +20,23 @@ function studetnFilter(
     }
     });
     if(subject == ""){
+      if(filterItem == "totalMark"){
         if(studentDetail[student.name].totalMark === filterMark){
             filtedItems.push(student.name)
         }
+      }
+      if(filterItem == "averageMark"){
+        if(studentDetail[student.name].averageMarkOfStudent == filterMark){
+          filtedItems.push(student.name)
+        }
+      }
+      if(filterItem == "percentage"){
+        if(studentDetail[student.name].percentageOfStudent == filterMark){
+          filtedItems.push(student.name)
+        }
+      }
     }
   });
   return filtedItems
 }
-export { studetnFilter };
+export { studentFilter };

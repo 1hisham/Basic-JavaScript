@@ -33,6 +33,7 @@ type StudentSubjectDetails ={
 type SubStudentDetail = {
   studentId:string;
   studentSubjects:Array<string>;
+  allMarks:Array<number>;
   totalMark:number;
   averageMarkOfStudent:number;
   percentageOfStudent:number;

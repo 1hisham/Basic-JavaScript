@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const subjectDetails_js_1 = require("./utils/subjectDetails.js");
+const calculateHighestAndLowest_js_1 = require("./utils/calculateHighestAndLowest.js");
+const studentDetails_js_1 = require("./utils/studentDetails.js");
 // import  { subjectDetails } from "./utils/totalSubjectDetails.js";
 let classObj = {
     name: "class A",
@@ -110,7 +111,7 @@ let classObj = {
 //8. Write a function to calculate and print the total marks for a specific student..
 // function studnetTotalMark(stduentName: string, classObj:ClassObj){
 //   let studentDetail = studentDetails(classObj)
-//   return studentDetail[stduentName].totalMark 
+//   return studentDetail[stduentName].totalMark
 // }
 // console.log(studnetTotalMark("Binu",classObj))
 // -------------------------------------
@@ -133,17 +134,17 @@ let classObj = {
 //     let subjectDetail = subjectDetails(classObj)
 //     let markDetails = subjectDetail[subject].markDetail
 //     let highestValue = calculateHigestAndLowest("highest", markDetails)
-//     let filtedItems = studetnFilter(highestValue, classObj, subject)
+//     let filtedItems = studentFilter(highestValue, classObj, subject,"")
 //     return filtedItems
 //   }
-// console.log(studentWithHigestMarkInSubject("English", classObj))
+// console.log(studentWithHigestMarkInSubject("Maths", classObj))
 // -------------------------------------
 // 12 .Write a function to find and print the student with the lowest marks in a specific subject.
 // function studentWithLowestMarkInSubject(subject:string, classObj: ClassObj){
 //   let subjectDetail = subjectDetails(classObj)
 //     let markDetails = subjectDetail[subject].markDetail
 //     let highestValue = calculateHigestAndLowest("lowest", markDetails)
-//     let filtedStudents = studetnFilter(highestValue, classObj, subject)
+//     let filtedStudents = studentFilter(highestValue, classObj, subject)
 //     return filtedStudents
 // }
 // console.log(studentWithLowestMarkInSubject("Maths", classObj))
@@ -152,7 +153,7 @@ let classObj = {
 // function studentWithHighestTotalMark(classObj:ClassObj){
 //   let totalMarks = classDetails(classObj).totalMarkOfStudents
 //   let highestMark = calculateHigestAndLowest("highest", totalMarks)
-//   let filterStudents = studetnFilter(highestMark, classObj)
+//   let filterStudents = studentFilter(highestMark, classObj,"","totalMark")
 //   return filterStudents
 // }
 // console.log(studentWithHighestTotalMark(classObj))
@@ -161,10 +162,350 @@ let classObj = {
 // function studentWithLowestMarkInSubject(classObj:ClassObj){
 //   let totalMarks = classDetails(classObj).totalMarkOfStudents;
 //   let lowestMark = calculateHigestAndLowest("lowest", totalMarks)
-//   let filtedStudents = studetnFilter(lowestMark, classObj)
+//   let filtedStudents = studentFilter(lowestMark, classfirstObj,"","totalMark")
 //   return filtedStudents
 // }
 // console.log(studentWithLowestMarkInSubject(classObj))
+// -------------------------------------
 // 15.Write a function to find and print the subject with the highest average marks.
-let subjectDetail = (0, subjectDetails_js_1.subjectDetails)(classObj);
-console.log(subjectDetail);
+// function highestAverageOfSubject(classObj: ClassObj){
+//   let subjectDetail = subjectDetails(classObj)
+//   let totalAverageMarksOfSubjcts:Array<number> = []
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     totalAverageMarksOfSubjcts.push(value.averageMark)
+//   });
+//   console.log(totalAverageMarksOfSubjcts)
+//   let higestAverage = calculateHigestAndLowest("highest", totalAverageMarksOfSubjcts)
+//   let filterItems = subjectFilter(subjectDetail,higestAverage,"averageMark")
+//   return filterItems
+// }
+// console.log(highestAverageOfSubject(classObj))
+// -------------------------------------
+// 16 Write a function to find and print the subject with the lowest average marks.
+// function lowestAverageOfSubject(classObj: ClassObj) {
+//   let subjectDetail = subjectDetails(classObj);
+//   let totalAverageMarksOfSubjcts: Array<number> = [];
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     totalAverageMarksOfSubjcts.push(value.averageMark);
+//   });
+//   let lowestAverage = calculateHigestAndLowest(
+//     "lowest",
+//     totalAverageMarksOfSubjcts
+//   );
+//   let filterItems = subjectFilter(subjectDetail, lowestAverage, "averageMark");
+//   return filterItems;
+// }
+// console.log(lowestAverageOfSubject(classObj));
+// -------------------------------------
+//17 Write a function to calculate and print the overall average marks for the class.
+// function classAverageMark(classObj: ClassObj){
+//   const averageMark = classDetails(classObj).totalAverage
+//   return averageMark
+// }
+// console.log(classAverageMark(classObj))
+// -------------------------------------
+// 18 .Write a function to calculate and print the overall total marks for the class.
+// function classTotalMark(classObj: ClassObj){
+//   const totalMark = classDetails(classObj).totalMark
+//   return totalMark
+// }
+// console.log(classTotalMark(classObj))
+// -------------------------------------
+// 19 .Write a function to calculate and print the average marks for each subject.
+// function averageMarkOfEverySubject(classObj: ClassObj){
+//   let subjectDetail = subjectDetails(classObj)
+//       let averageMarksOfSubjcts:Array<number> = []
+//       Object.entries(subjectDetail).forEach(([key, value]) => {
+//         averageMarksOfSubjcts.push(value.averageMark)
+//       });
+//       return averageMarksOfSubjcts
+// }
+// console.log(averageMarkOfEverySubject(classObj))
+// -------------------------------------
+// 20 .Write a function to calculate and print the total marks for each subject.
+// function totalMarkOfEverySubject(classObj: ClassObj){
+//   const subjectDetail = subjectDetails(classObj)
+//   let totalMarks = Object.entries(subjectDetail).map(([key, value]) => {
+//     return value.totalMark
+//   })
+//   return totalMarks
+// }
+// console.log(totalMarkOfEverySubject(classObj))first
+// -------------------------------------
+//21. Write a function to find and print the subject with the highest total marks.
+// function getSubjectWithHighestTotal(classObj: ClassObj) {
+//   const subjectDetail = subjectDetails(classObj);
+//   let totalMarks = Object.entries(subjectDetail).map(([key, value]) => {
+//     return value.totalMark;
+//   });
+//   const highestTotalMark = calculateHigestAndLowest("highest", totalMarks);
+//   let subjectWithHighestTotalMark = subjectFilter(
+//     subjectDetail,
+//     highestTotalMark,
+//     "totalMark"
+//   );
+//   return subjectWithHighestTotalMark;
+// }
+// console.log(getSubjectWithHighestTotal(classObj));
+// -------------------------------------
+// 22.Write a function to find and print the subject with the lowest total marks.
+// function getSubjectWithLowestTotal(classObj: ClassObj) {
+//   const subjectDetail = subjectDetails(classObj);
+//   let totalMarks = Object.entries(subjectDetail).map(([key, value]) => {
+//     return value.totalMark;
+//   });
+//   const lowestTotalMark = calculateHigestAndLowest("lowest", totalMarks);
+//   let subjectWithlowestTotalMark = subjectFilter(
+//     subjectDetail,
+//     lowestTotalMark,
+//     "totalMark"
+//   );
+//   return subjectWithlowestTotalMark;
+// }
+// console.log(getSubjectWithLowestTotal(classObj));
+// -------------------------------------
+// 23. Write a function to find and print the student(s) with the highest average marks.
+// function getStudentWithHighestAverageMark(classObj: ClassObj) {
+//   let studentDetail = studentDetails(classObj);
+//   let studentAverageMarks = Object.entries(studentDetail).map(
+//     ([key, value]) => {
+//       return value.averageMarkOfStudent;
+//     }
+//   );
+//   let higestAverage = calculateHigestAndLowest("highest", studentAverageMarks);
+//   let studentWithHighestAverageMark = studentFilter(
+//     higestAverage,
+//     classObj,
+//     "",
+//     "averageMark"
+//   );
+//   return studentWithHighestAverageMark;
+// }
+// console.log(getStudentWithHighestAverageMark(classObj));
+// -------------------------------------
+// 24.Write a function to find and print the student(s) with the lowest average marks.
+// function getStudentWithlowestAverageMark(classObj: ClassObj) {
+//   let studentDetail = studentDetails(classObj);
+//   let studentAverageMarks = Object.entries(studentDetail).map(
+//     ([key, value]) => {
+//       return value.averageMarkOfStudent;
+//     }
+//   );
+//   let lowestAverage = calculateHigestAndLowest("lowest", studentAverageMarks);
+//   let studentWithlowestAverageMark = studentFilter(
+//     lowestAverage,
+//     classObj,
+//     "",
+//     "averageMark"
+//   );
+//   return studentWithlowestAverageMark;
+// }
+// console.log(getStudentWithlowestAverageMark(classObj));
+// -------------------------------------
+//25.Write a function to find and print the student(s) with the highest total marks.
+// function studentsWithHighestTotalMark(classObj:ClassObj){
+//   let totalMarks = classDetails(classObj).totalMarkOfStudents
+//   let highestMark = calculateHigestAndLowest("highest", totalMarks)
+//   let filterStudents = studentFilter(highestMark, classObj,"","totalMark")
+//   return filterStudents
+// }
+// console.log(studentsWithHighestTotalMark(classObj))
+// -------------------------------------
+// 26.Write a function to find and print the student(s) with the lowest total marks.
+// function studentsWithLowestMarkInSubject(classObj:ClassObj){
+//   let totalMarks = classDetails(classObj).totalMarkOfStudents;
+//   let lowestMark = calculateHigestAndLowest("lowest", totalMarks)
+//   let filtedStudents = studentFilter(lowestMark, classObj,"","totalMark")
+//   return filtedStudents
+// }
+// console.log(studentsWithLowestMarkInSubject(classObj))
+// -------------------------------------
+// 27.Write a function to calculate and print the number of students who scored above a certain mark in a specific subject.
+// function studentsScoredAboveCeratinMarkInSubject(mark:number, subject:string, classObj:ClassObj){
+//   let studentScored = checkAboveCertainMark( mark , subject , classObj)
+//   return studentScored.length
+// }
+// console.log(studentsScoredAboveCeratinMarkInSubject(19,"English", classObj))
+// -------------------------------------
+// 28 .Write a function to calculate and print the number of students who scored below a certain mark in a specific subject.
+// function studentsScoredBelowCeratinMarkInSubject(mark:number, subject:string, classObj:ClassObj){
+//   let studentScored = checkBelowCertainMark( mark , subject , classObj)
+//   return studentScored.length
+// }
+// console.log(studentsScoredBelowCeratinMarkInSubject(39,"English", classObj))
+// -------------------------------------
+// 29. Write a function to calculate and print the number of students who scored above a certain mark in all subjects.
+// function studentsScoredAboveCeratinMarkInAllSubject(mark:number, subject:string, classObj:ClassObj){
+//   let studentScored = checkAboveCertainMark( mark , subject , classObj)
+//   return studentScored.length
+// }
+// console.log(studentsScoredAboveCeratinMarkInAllSubject(19,"all", classObj))
+// -------------------------------------
+// 30.Write a function to calculate and print the number of students who scored below a certain mark in all subjects.
+// function studentsScoredBelowCeratinMarkInAllSubject(mark:number, subject:string, classObj:ClassObj){
+//   let studentScored = checkBelowCertainMark( mark , subject , classObj)
+//   return studentScored.length
+// }
+// console.log(studentsScoredBelowCeratinMarkInAllSubject(39,"all", classObj))
+// -------------------------------------
+//31.Write a function to calculate and print the percentage of students who scored above a certain mark in a specific subject.
+// function percentageOfStudentsAboveCertainMarkInSubject(
+//   mark: number,
+//   subject: string,
+//   classObj: ClassObj
+// ) {
+//   let studentsScored = checkAboveCertainMark(mark, subject, classObj);
+//   let studentCountScoredAbove = studentsScored.length;
+//   let subjectDetail = subjectDetails(classObj);
+//   const totalStudent = subjectDetail[subject].totalStudent;
+//   let studentsPercentage = (studentCountScoredAbove / totalStudent) * 100;
+//   return studentsPercentage;
+// }
+// console.log(percentageOfStudentsAboveCertainMarkInSubject(39, "Maths", classObj));
+// -------------------------------------
+// 32.Write a function to calculate and print the percentage of students who scored below a certain mark in a specific subject.
+// function percentageOfStudentsBelowCertainMarkInSubject(
+//   mark: number,
+//   subject: string,
+//   classObj: ClassObj
+// ) {
+//   let studentsScored = checkBelowCertainMark(mark, subject, classObj);
+//   let studentCountScoredAbove = studentsScored.length;
+//   let subjectDetail = subjectDetails(classObj);
+//   const totalStudent = subjectDetail[subject].totalStudent;
+//   let studentsPercentage = (studentCountScoredAbove / totalStudent) * 100;
+//   return studentsPercentage;
+// }
+// console.log(percentageOfStudentsBelowCertainMarkInSubject(39, "Maths", classObj));
+// 33.Write a function to calculate and print the percentage of students who scored above a certain mark in all subjects.
+// -------------------------------------
+// function percentageOfStudentsAboveCertainMarkAllSubject(
+//   mark: number,
+//   subject: string,
+//   classObj: ClassObj
+// ) {
+//   let studentsScored = checkAboveCertainMark(mark, subject, classObj);
+//   let studentCountScoredAbove = studentsScored.length;
+//   let totalStudents = classDetails(classObj).totalNumberOfStudents
+//   let studentsPercentage = (studentCountScoredAbove / totalStudents) * 100;
+//   return studentsPercentage;
+// }
+// console.log(percentageOfStudentsAboveCertainMarkAllSubject(29, "all", classObj));
+// -------------------------------------
+// 34.Write a function to calculate and print the percentage of students who scored below a certain mark in all subjects.
+// function percentageOfStudentsBelowCertainMarkAllSubject(
+//   mark: number,
+//   subject: string,
+//   classObj: ClassObj
+// ) {
+//   let studentsScored = checkBelowCertainMark(mark, subject, classObj);
+//   let studentCountScoredAbove = studentsScored.length;
+//   let totalStudents = classDetails(classObj).totalNumberOfStudents
+//   let studentsPercentage = (studentCountScoredAbove / totalStudents) * 100;
+//   return studentsPercentage;
+// }
+// console.log(percentageOfStudentsBelowCertainMarkAllSubject(39, "all", classObj));
+// -------------------------------------
+// 35. Write a function to find and print the student(s) with the highest percentage of marks.
+// function getStudentWithHighstPercentage(classObj:ClassObj){
+//  const studentDetail = studentDetails(classObj)
+//  const studentsPercentage = Object.entries(studentDetail).map(([key, value]) => {
+//     return value.percentageOfStudent
+//  })
+//  const highestPercentage = calculateHigestAndLowest("highest", studentsPercentage);
+//  const studentsWithHighestPercentage = studentFilter(highestPercentage,classObj,"","percentage")
+//  return studentsWithHighestPercentage
+// }
+// console.log(getStudentWithHighstPercentage(classObj))
+// -------------------------------------
+// 36.Write a function to find and print the student(s) with the lowest percentage of marks.
+// function getStudentWithLowestPercentage(classObj:ClassObj){
+//   const studentDetail = studentDetails(classObj)
+//   const studentsPercentage = Object.entries(studentDetail).map(([key, value]) => {
+//      return value.percentageOfStudent
+//   })
+//   const lowestPercentage = calculateHigestAndLowest("lowest", studentsPercentage);
+//   const studentsWithlowestPercentage = studentFilter(lowestPercentage,classObj,"","percentage")
+//   return studentsWithlowestPercentage
+//  }
+//  console.log(getStudentWithLowestPercentage(classObj))
+// 37.Write a function to find and print the subject(s) with the highest percentage of marks.
+// function getSubjectWithHighestPercentage(classObj: ClassObj){
+// const subjectDetail = subjectDetails(classObj)
+// const subjectsPercentage = Object.entries(subjectDetail).map(([key, value]) => {
+// return value.totalpercentage
+// })
+// const higestPercentage = calculateHigestAndLowest("highest", subjectsPercentage)
+// const subjectWithHighestPercentage = subjectFilter(subjectDetail, higestPercentage, "percentage")
+// return subjectWithHighestPercentage
+// }
+// console.log(getSubjectWithHighestPercentage(classObj))
+// 38.Write a function to find and print the subject(s) with the lowest percentage of marks.
+// function getSubjectWithLowestPercentage(classObj: ClassObj){
+//   const subjectDetail = subjectDetails(classObj)
+//   const subjectsPercentage = Object.entries(subjectDetail).map(([key, value]) => {
+//   return value.totalpercentage
+//   })
+//   const lowestPercentage = calculateHigestAndLowest("lowest", subjectsPercentage)
+//   const subjectWithLowestPercentage = subjectFilter(subjectDetail, lowestPercentage, "percentage")
+//   return subjectWithLowestPercentage
+//   }
+//   console.log(getSubjectWithLowestPercentage(classObj))
+// 39.Write a function to find and print the student(s) with the highest percentage of marks in a specific subject.
+// function studentsWithHighestPercentageInSubject(subject:string, classObj:ClassObj){
+//   let maxiumMark = 50;
+//   let subjectDetail = subjectDetails(classObj)
+//   let markDetails = subjectDetail[subject].markDetail
+//   let highestValue = calculateHigestAndLowest("highest", markDetails)
+//   let studentWithHigestMark = studentFilter(highestValue, classObj, subject,"")
+//   let percentageOfStudent = highestValue / maxiumMark * 100
+//   return ({"name": studentWithHigestMark, "percentage": percentageOfStudent})
+// }
+// console.log(studentsWithHighestPercentageInSubject("English", classObj))
+// 40.Write a function to find and print the student(s) with the lowest percentage of marks in a specific subject.
+// function studentsWithLowestPercentageInSubject(subject:string, classObj:ClassObj){
+//   let maxiumMark = 50;
+//   let subjectDetail = subjectDetails(classObj)
+//   let markDetails = subjectDetail[subject].markDetail
+//   let lowestMark = calculateHigestAndLowest("lowest", markDetails)
+//   let studentWithlowestMark = studentFilter(lowestMark, classObj, subject,"")
+//   let percentageOfStudent = lowestMark / maxiumMark * 100
+//   return ({"name": studentWithlowestMark, "percentage": percentageOfStudent})
+// }
+// console.log(studentsWithLowestPercentageInSubject("English", classObj))
+// 41. Write a function to find and print the subject(s) with the highest percentage of marks for a specific student.
+// function subjectWithHigestPercentageOfStudent(studentName:string, classObj:ClassObj){
+//   let highestPercentageSubject:Array<string> = []
+//   let percentage =0;
+//   let maxMark = 50;
+//   const studentDetail = studentDetails(classObj)
+//   const studentMarkDetails = studentDetail[studentName].allMarks
+//   const studentHighestMark = calculateHigestAndLowest("highest", studentMarkDetails)
+//   const highestPercentageSubjects = studentDetail[studentName].studentSubjectDetails.filter((item) => {
+//     return item.mark === studentHighestMark
+//   })
+//   percentage = (studentHighestMark / maxMark) * 100
+//   highestPercentageSubjects.forEach((item)=> {
+//     highestPercentageSubject.push(item.subject)
+//   })
+//   return ({"subjects": highestPercentageSubject, "percentage": percentage})
+// }
+// console.log(subjectWithHigestPercentageOfStudent("Binu", classObj))
+// 42.Write a function to find and print the subject(s) with the lowest percentage of marks for a specific student.
+function subjectWithLowestPercentageOfStudent(studentName, classObj) {
+    let lowestPercentageSubject = [];
+    let percentage = 0;
+    let maxMark = 50;
+    const studentDetail = (0, studentDetails_js_1.studentDetails)(classObj);
+    const studentMarkDetails = studentDetail[studentName].allMarks;
+    const studentLowestMark = (0, calculateHighestAndLowest_js_1.calculateHigestAndLowest)("lowest", studentMarkDetails);
+    const highestPercentageSubjects = studentDetail[studentName].studentSubjectDetails.filter((item) => {
+        return item.mark === studentLowestMark;
+    });
+    percentage = (studentLowestMark / maxMark) * 100;
+    highestPercentageSubjects.forEach((item) => {
+        lowestPercentageSubject.push(item.subject);
+    });
+    return ({ "subjects": lowestPercentageSubject, "percentage": percentage });
+}
+console.log(subjectWithLowestPercentageOfStudent("Binu", classObj));
