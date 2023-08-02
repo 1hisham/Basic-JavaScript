@@ -609,3 +609,86 @@ let classObj: ClassObj = {
 // -------------------------------------
 
 // 43.Write a function to find and print the subject(s) in which all students scored above a certain mark.
+
+// function subjectsAboveCeratinMark(mark: number, classObj: ClassObj) {
+//   const filterSubject: Array<string> = [];
+//   const subjectDetail = subjectDetails(classObj);
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     let count = 0;
+//     let totalMarksCount = value.markDetail.length;
+//     value.markDetail.forEach((item) => {
+//       if (item > mark) {
+//         count++;
+//       }
+//     });
+//     if (totalMarksCount == count) {
+//       filterSubject.push(key);
+//     }
+//   });
+//   return filterSubject
+// }
+// console.log(subjectsAboveCeratinMark(30, classObj));
+
+
+// 44. Write a function to find and print the subject(s) in which all students scored below a certain mark.
+
+// function subjectsBelowCertainMark(mark:number, classObj: ClassObj){
+//   const filterSubject: Array<string> = [];
+//   const subjectDetail = subjectDetails(classObj);
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     let count = 0;
+//     let totalMarksCount = value.markDetail.length;
+//     value.markDetail.forEach((item) => {
+//       if (item < mark) {
+//         count++;
+//       }
+//     });
+//     if (totalMarksCount == count) {
+//       filterSubject.push(key);
+//     }
+//   });
+//   return filterSubject
+// }
+// console.log(subjectsBelowCertainMark(30,classObj))
+
+// 45.Write a function to find and print the subject(s) in which the average marks of all students are above a certain mark.
+
+// function getSubjectsAverageMarkAboveCeratinMark(mark:number, classObj:ClassObj){
+//   const subjectDetail = subjectDetails(classObj);
+//   const subjectAboveAverageMark:Array<string> =  [];
+//   Object.entries(subjectDetail).map(([key, value])=> {
+//     if(value.averageMark > mark){
+//       subjectAboveAverageMark.push(key)
+//     }
+//   }) 
+//   return (subjectAboveAverageMark)
+ 
+// }
+// console.log(getSubjectsAverageMarkAboveCeratinMark(31, classObj))
+
+
+// 46. Write a function to find and print the subject(s) in which the average marks of all students are below a certain mark.
+
+// function getSubjectsAverageMarkBelowCeratinMark(mark:number, classObj:ClassObj){
+//   const subjectDetail = subjectDetails(classObj);
+//   const subjectBelowAverageMark:Array<string> =  [];
+//   Object.entries(subjectDetail).map(([key, value])=> {
+//     if(value.averageMark < mark){
+//       subjectBelowAverageMark.push(key)
+//     }
+//   }) 
+//   return (subjectBelowAverageMark)
+ 
+// }
+// console.log(getSubjectsAverageMarkBelowCeratinMark(31, classObj))
+
+//47.
+
+let subjectDetail = subjectDetails(classObj)
+let studentDetail = studentDetails(classObj)
+let classDetail = classDetails(classObj)
+console.log(subjectDetail)
+console.log(studentDetail)
+console.log(classDetail)
+
+

@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const calculateHighestAndLowest_js_1 = require("./utils/calculateHighestAndLowest.js");
+const classDetails_js_1 = require("./utils/classDetails.js");
 const studentDetails_js_1 = require("./utils/studentDetails.js");
+const subjectDetails_js_1 = require("./utils/subjectDetails.js");
 // import  { subjectDetails } from "./utils/totalSubjectDetails.js";
 let classObj = {
     name: "class A",
@@ -429,6 +430,7 @@ let classObj = {
 //   return studentsWithlowestPercentage
 //  }
 //  console.log(getStudentWithLowestPercentage(classObj))
+// -------------------------------------
 // 37.Write a function to find and print the subject(s) with the highest percentage of marks.
 // function getSubjectWithHighestPercentage(classObj: ClassObj){
 // const subjectDetail = subjectDetails(classObj)
@@ -440,6 +442,7 @@ let classObj = {
 // return subjectWithHighestPercentage
 // }
 // console.log(getSubjectWithHighestPercentage(classObj))
+// -------------------------------------
 // 38.Write a function to find and print the subject(s) with the lowest percentage of marks.
 // function getSubjectWithLowestPercentage(classObj: ClassObj){
 //   const subjectDetail = subjectDetails(classObj)
@@ -451,6 +454,7 @@ let classObj = {
 //   return subjectWithLowestPercentage
 //   }
 //   console.log(getSubjectWithLowestPercentage(classObj))
+// -------------------------------------
 // 39.Write a function to find and print the student(s) with the highest percentage of marks in a specific subject.
 // function studentsWithHighestPercentageInSubject(subject:string, classObj:ClassObj){
 //   let maxiumMark = 50;
@@ -462,6 +466,7 @@ let classObj = {
 //   return ({"name": studentWithHigestMark, "percentage": percentageOfStudent})
 // }
 // console.log(studentsWithHighestPercentageInSubject("English", classObj))
+// -------------------------------------
 // 40.Write a function to find and print the student(s) with the lowest percentage of marks in a specific subject.
 // function studentsWithLowestPercentageInSubject(subject:string, classObj:ClassObj){
 //   let maxiumMark = 50;
@@ -473,6 +478,7 @@ let classObj = {
 //   return ({"name": studentWithlowestMark, "percentage": percentageOfStudent})
 // }
 // console.log(studentsWithLowestPercentageInSubject("English", classObj))
+// -------------------------------------
 // 41. Write a function to find and print the subject(s) with the highest percentage of marks for a specific student.
 // function subjectWithHigestPercentageOfStudent(studentName:string, classObj:ClassObj){
 //   let highestPercentageSubject:Array<string> = []
@@ -491,21 +497,92 @@ let classObj = {
 //   return ({"subjects": highestPercentageSubject, "percentage": percentage})
 // }
 // console.log(subjectWithHigestPercentageOfStudent("Binu", classObj))
+// -------------------------------------
 // 42.Write a function to find and print the subject(s) with the lowest percentage of marks for a specific student.
-function subjectWithLowestPercentageOfStudent(studentName, classObj) {
-    let lowestPercentageSubject = [];
-    let percentage = 0;
-    let maxMark = 50;
-    const studentDetail = (0, studentDetails_js_1.studentDetails)(classObj);
-    const studentMarkDetails = studentDetail[studentName].allMarks;
-    const studentLowestMark = (0, calculateHighestAndLowest_js_1.calculateHigestAndLowest)("lowest", studentMarkDetails);
-    const highestPercentageSubjects = studentDetail[studentName].studentSubjectDetails.filter((item) => {
-        return item.mark === studentLowestMark;
-    });
-    percentage = (studentLowestMark / maxMark) * 100;
-    highestPercentageSubjects.forEach((item) => {
-        lowestPercentageSubject.push(item.subject);
-    });
-    return ({ "subjects": lowestPercentageSubject, "percentage": percentage });
-}
-console.log(subjectWithLowestPercentageOfStudent("Binu", classObj));
+// function subjectWithLowestPercentageOfStudent(studentName:string, classObj:ClassObj){
+//   let lowestPercentageSubject:Array<string> = []
+//   let percentage =0;
+//   let maxMark = 50;
+//   const studentDetail = studentDetails(classObj)
+//   const studentMarkDetails = studentDetail[studentName].allMarks
+//   const studentLowestMark = calculateHigestAndLowest("lowest", studentMarkDetails)
+//   const highestPercentageSubjects = studentDetail[studentName].studentSubjectDetails.filter((item) => {
+//     return item.mark === studentLowestMark
+//   })
+//   percentage = (studentLowestMark / maxMark) * 100
+//   highestPercentageSubjects.forEach((item)=> {
+//     lowestPercentageSubject.push(item.subject)
+//   })
+//   return ({"subjects": lowestPercentageSubject, "percentage": percentage})
+// }
+// console.log(subjectWithLowestPercentageOfStudent("Binu", classObj))
+// -------------------------------------
+// 43.Write a function to find and print the subject(s) in which all students scored above a certain mark.
+// function subjectsAboveCeratinMark(mark: number, classObj: ClassObj) {
+//   const filterSubject: Array<string> = [];
+//   const subjectDetail = subjectDetails(classObj);
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     let count = 0;
+//     let totalMarksCount = value.markDetail.length;
+//     value.markDetail.forEach((item) => {
+//       if (item > mark) {
+//         count++;
+//       }
+//     });
+//     if (totalMarksCount == count) {
+//       filterSubject.push(key);
+//     }
+//   });
+//   return filterSubject
+// }
+// console.log(subjectsAboveCeratinMark(30, classObj));
+// 44. Write a function to find and print the subject(s) in which all students scored below a certain mark.
+// function subjectsBelowCertainMark(mark:number, classObj: ClassObj){
+//   const filterSubject: Array<string> = [];
+//   const subjectDetail = subjectDetails(classObj);
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     let count = 0;
+//     let totalMarksCount = value.markDetail.length;
+//     value.markDetail.forEach((item) => {
+//       if (item < mark) {
+//         count++;
+//       }
+//     });
+//     if (totalMarksCount == count) {
+//       filterSubject.push(key);
+//     }
+//   });
+//   return filterSubject
+// }
+// console.log(subjectsBelowCertainMark(30,classObj))
+// 45.Write a function to find and print the subject(s) in which the average marks of all students are above a certain mark.
+// function getSubjectsAverageMarkAboveCeratinMark(mark:number, classObj:ClassObj){
+//   const subjectDetail = subjectDetails(classObj);
+//   const subjectAboveAverageMark:Array<string> =  [];
+//   Object.entries(subjectDetail).map(([key, value])=> {
+//     if(value.averageMark > mark){
+//       subjectAboveAverageMark.push(key)
+//     }
+//   }) 
+//   return (subjectAboveAverageMark)
+// }
+// console.log(getSubjectsAverageMarkAboveCeratinMark(31, classObj))
+// 46. Write a function to find and print the subject(s) in which the average marks of all students are below a certain mark.
+// function getSubjectsAverageMarkBelowCeratinMark(mark:number, classObj:ClassObj){
+//   const subjectDetail = subjectDetails(classObj);
+//   const subjectBelowAverageMark:Array<string> =  [];
+//   Object.entries(subjectDetail).map(([key, value])=> {
+//     if(value.averageMark < mark){
+//       subjectBelowAverageMark.push(key)
+//     }
+//   }) 
+//   return (subjectBelowAverageMark)
+// }
+// console.log(getSubjectsAverageMarkBelowCeratinMark(31, classObj))
+//47.
+let subjectDetail = (0, subjectDetails_js_1.subjectDetails)(classObj);
+let studentDetail = (0, studentDetails_js_1.studentDetails)(classObj);
+let classDetail = (0, classDetails_js_1.classDetails)(classObj);
+console.log(subjectDetail);
+console.log(studentDetail);
+console.log(classDetail);
