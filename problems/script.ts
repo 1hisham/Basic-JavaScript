@@ -684,11 +684,6 @@ let classObj: ClassObj = {
 
 //47.
 
-let subjectDetail = subjectDetails(classObj)
-let studentDetail = studentDetails(classObj)
-let classDetail = classDetails(classObj)
-console.log(subjectDetail)
-console.log(studentDetail)
-console.log(classDetail)
+
 
 
