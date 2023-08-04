@@ -41,3 +41,8 @@ type SubStudentDetail = {
 }
 
 type StudentDetail = Record<string, SubStudentDetail>
+
+type subjectAndStudent = {subject: string, students: Array<string>}[]
+
+type subjectAndMark = {subject: string, highestMark: number}[]
+  
