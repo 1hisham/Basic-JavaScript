@@ -1037,3 +1037,4 @@ let classObj: ClassObj = {
 //   //find the studetn with higest mark
 // }
 // console.log(studentsWithHighestMarkInSubject("Maths", classObj));
+
