@@ -865,37 +865,367 @@ let classObj = {
 //   return lowestPercentageSubjects
 // }
 // console.log(subjectsWithLowestPercentageBelowCeratinMark(30, classObj));
-// 11.Write a function to find and print the student with the highest marks in a specific subject.
-function studentsWithHighestMarkInSubject(subject, classObj) {
-    let markArray = [];
-    let subjectToppers = [];
-    // find the subject markDetails
-    classObj.students.forEach((student) => {
-        student.marks.forEach((item) => {
-            if (item.subject == subject) {
-                markArray.push(item.mark);
-            }
-        });
-    });
-    console.log(markArray);
-    //find the higest Mark in subject
-    let highestMark = 0;
-    markArray.forEach((mark) => {
-        if (mark > highestMark) {
-            highestMark = mark;
-        }
-    });
-    console.log(highestMark);
-    classObj.students.forEach((student) => {
-        student.marks.forEach((item) => {
-            if (item.subject == subject) {
-                if (item.mark == highestMark) {
-                    subjectToppers.push(student.name);
-                }
-            }
-        });
-    });
-    console.log(subjectToppers);
-    //find the studetn with higest mark
-}
-console.log(studentsWithHighestMarkInSubject("Maths", classObj));
+// 63.Write a function to calculate and print the percentage of students who scored above the class average marks in each subject.
+// function percentageOfStudentsAboveClassAverage(classObj: ClassObj) {
+//   const classDetail = classDetails(classObj);
+//   const studentAverageOfClass = classDetail.studentAverage;
+//   const totalStudent = classDetail.totalNumberOfStudents;
+//   const studentDetail = studentDetails(classObj);
+//   let count = 0;
+//   for (const key in studentDetail) {
+//     const value = studentDetail[key];
+//     if(value.averageMarkOfStudent > studentAverageOfClass){
+//       count++
+//     }
+//   }
+//   let studentsPercentageAboveAverage = (count / totalStudent) * 100;
+//   return studentsPercentageAboveAverage
+// }
+// console.log(percentageOfStudentsAboveClassAverage(classObj));
+// 64.Write a function to calculate and print the percentage of students who scored below the class average marks in each subject.
+// function percentageOfStudentsBelowClassAverage(classObj: ClassObj) {
+//   const classDetail = classDetails(classObj);
+//   const studentAverageOfClass = classDetail.studentAverage;
+//   const totalStudent = classDetail.totalNumberOfStudents;
+//   const studentDetail = studentDetails(classObj);
+//   let count = 0;
+//   for (const key in studentDetail) {
+//     const value = studentDetail[key];
+//     if(value.averageMarkOfStudent < studentAverageOfClass){
+//       count++
+//     }
+//   }
+//   let studentsPercentageBelowAverage = (count / totalStudent) * 100;
+//   return studentsPercentageBelowAverage
+// }
+// console.log(percentageOfStudentsBelowClassAverage(classObj));
+// 65.Write a function to calculate and print the percentage of students who scored above the class average marks in at least one subject.
+// function percentageOfStudentScoredAboveAverageAtLeastOneSubject(classObj: ClassObj){
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   const totalStudent = classDetails(classObj).totalNumberOfStudents
+//   const studentDetail = studentDetails(classObj)
+//   let count = 0;
+//   for(const key in studentDetail){
+//     const value = studentDetail[key]
+//     for(let i = 0; i < value.allMarks.length; i++){
+//       if(studentAverageOfClass < value.allMarks[i]){
+//         count++
+//         break
+//       }
+//     }
+//   }
+//   let percentage = (count / totalStudent) * 100
+//   return percentage
+// }
+// console.log(percentageOfStudentScoredAboveAverageAtLeastOneSubject(classObj))
+// 66.Write a function to calculate and print the percentage of students who scored below the class average marks in at least one subject.
+// function percentageOfStudentScoredBelowAverageAtLeastOneSubject(classObj: ClassObj){
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   const totalStudent = classDetails(classObj).totalNumberOfStudents
+//   const studentDetail = studentDetails(classObj)
+//   let count = 0;
+//   for(const key in studentDetail){
+//     const value = studentDetail[key]
+//     for(let i = 0; i < value.allMarks.length; i++){
+//       if(studentAverageOfClass > value.allMarks[i]){
+//         count++
+//         break
+//       }
+//     }
+//   }
+//   let percentage = (count / totalStudent) * 100
+//   return percentage
+// }
+// console.log(percentageOfStudentScoredBelowAverageAtLeastOneSubject(classObj))
+// 67.Write a function to find and print the student(s) who scored above the class average marks in all subjects.
+// function percentageOfStudentScoredAboveAverageAllSubject(classObj: ClassObj){
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   const totalStudent = classDetails(classObj).totalNumberOfStudents
+//   const studentDetail = studentDetails(classObj)
+//   let count = totalStudent;
+//   for(const key in studentDetail){
+//     const value = studentDetail[key]
+//     for(let i = 0; i < value.allMarks.length; i++){
+//       if(studentAverageOfClass > value.allMarks[i]){
+//       count--
+//       break
+//       }
+//     }
+//   }
+//   let percentage = (count / totalStudent) * 100
+//   return percentage
+// }
+// console.log(percentageOfStudentScoredAboveAverageAllSubject(classObj))
+// 68.Write a function to find and print the student(s) who scored below the class average marks in all subjects.
+// function percentageOfStudentScoredBelowAverageAllSubject(classObj: ClassObj){
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   const totalStudent = classDetails(classObj).totalNumberOfStudents
+//   const studentDetail = studentDetails(classObj)
+//   let count = totalStudent;
+//   for(const key in studentDetail){
+//     const value = studentDetail[key]
+//     for(let i = 0; i < value.allMarks.length; i++){
+//       if(studentAverageOfClass < value.allMarks[i]){
+//       count--
+//       break
+//       }
+//     }
+//   }
+//   let percentage = (count / totalStudent) * 100
+//   return percentage
+// }
+// console.log(percentageOfStudentScoredBelowAverageAllSubject(classObj))
+// 69.Write a function to find and print the student(s) who scored above the class average marks in the majority of subjects.
+// function studentScoredAboveClassAvgInMajoritySubject(classObj: ClassObj) {
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   let studentsScoredAbove: Array<string> = [];
+//   const studentDetail = studentDetails(classObj);
+//   for (const key in studentDetail) {
+//     let count = 0;
+//     const value = studentDetail[key];
+//     let studentSubjectCount = value.studentSubjects.length;
+//     for (let i = 0; i < value.allMarks.length; i++) {
+//       if (studentAverageOfClass < value.allMarks[i]) {
+//         count++;
+//       }
+//     }
+//     if ((count / studentSubjectCount) * 100 > 50) {
+//       studentsScoredAbove.push(key);
+//     }
+//   }
+// return studentsScoredAbove
+// }
+// console.log(studentScoredAboveClassAvgInMajoritySubject(classObj));
+// 70.Write a function to find and print the student(s) who scored below the class average marks in the majority of subjects.
+// function studentScoredBelowClassAvgInMajoritySubject(classObj: ClassObj) {
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   let studentsScoredBelow: Array<string> = [];
+//   const studentDetail = studentDetails(classObj);
+//   for (const key in studentDetail) {
+//     let count = 0;
+//     const value = studentDetail[key];
+//     let studentSubjectCount = value.studentSubjects.length;
+//     for (let i = 0; i < value.allMarks.length; i++) {
+//       if (studentAverageOfClass < value.allMarks[i]) {
+//         count++;
+//       }
+//     }
+//     if ((count / studentSubjectCount) * 100 < 50) {
+//       studentsScoredBelow.push(key);
+//     }
+//   }
+//     return studentsScoredBelow
+// }
+// console.log(studentScoredBelowClassAvgInMajoritySubject(classObj));
+// 71. Write a function to find and print the subject(s) in which the majority of students scored above the class average marks.
+// function subjectWithMajorityScoredAboveClassAvg(classObj:ClassObj){
+//     const studentAverageOfClass = classDetails(classObj).studentAverage;
+//   let subjectScoredAbove: Array<string> = [];
+//   const subjectDetail = subjectDetails(classObj);
+//   for (const key in subjectDetail) {
+//     let count = 0;
+//     const value = subjectDetail[key];
+//     let studentSubjectCount = value.totalStudent;
+//     for (let i = 0; i < value.markDetail.length; i++) {
+//       if (studentAverageOfClass > value.markDetail[i]) {
+//         count++;
+//       }
+//     }
+//     if ((count / studentSubjectCount) * 100 < 50) {
+//       subjectScoredAbove.push(key);
+//     }
+//   }
+//     return subjectScoredAbove
+// }
+// console.log(subjectWithMajorityScoredAboveClassAvg(classObj))
+//72.Write a function to find and print the subject(s) in which the majority of students scored below the class average marks.
+// function subjectWithMajorityScoredBelowClassAvg(classObj:ClassObj){
+//   const studentAverageOfClass = classDetails(classObj).studentAverage;
+// let subjectScoredAbove: Array<string> = [];
+// const subjectDetail = subjectDetails(classObj);
+// for (const key in subjectDetail) {
+//   let count = 0;
+//   const value = subjectDetail[key];
+//   let studentSubjectCount = value.totalStudent;
+//   for (let i = 0; i < value.markDetail.length; i++) {
+//     if (studentAverageOfClass < value.markDetail[i]) {
+//       count++;
+//     }
+//   }
+//   if ((count / studentSubjectCount) * 100 < 50) {
+//     subjectScoredAbove.push(key);
+//   }
+// }
+//   return subjectScoredAbove
+// }
+// console.log(subjectWithMajorityScoredBelowClassAvg(classObj))
+//73.Write a function to calculate and print the percentage of students who scored above the average marks of a specific student in each subject.
+// function getPercentageOfStudentsScoredAboveAvgStudentInAllSubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   const totalStudents = classDetails(classObj).totalNumberOfStudents -1;
+//   const averageMarkOfstudent = studentDetail[student].averageMarkOfStudent;
+//   let studentsWereAboveAvg = checkAboveCertainMark(
+//     averageMarkOfstudent,
+//     "all",
+//     classObj
+//   );
+//   let percentage = (studentsWereAboveAvg.length / totalStudents) * 100;
+//   return percentage;
+// }
+// console.log(
+//   getPercentageOfStudentsScoredAboveAvgStudentInAllSubject("Mini SS", classObj)
+// );
+// 74.Write a function to calculate and print the percentage of students who scored below the average marks of a specific student in each subject.
+// function getPercentageOfStudentsScoredBelowAvgStudentInAllSubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   const totalStudents = classDetails(classObj).totalNumberOfStudents -1;
+//   const averageMarkOfstudent = studentDetail[student].averageMarkOfStudent;
+//   let studentsWereBelowAvg = checkBelowCertainMark(
+//     averageMarkOfstudent,
+//     "all",
+//     classObj
+//   );
+//   let percentage = (studentsWereBelowAvg.length / totalStudents) * 100;
+//   return percentage;
+// }
+// console.log(
+//   getPercentageOfStudentsScoredBelowAvgStudentInAllSubject("Ravi", classObj)
+// );
+// 75.Write a function to calculate and print the percentage of students who scored above the average marks of a specific student in at least one subject.
+// function getPercentageOfStudentsScoredAboveAvgStudentInAnySubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   let studentsAboveAvg: Array<string> = [];
+//   const totalStudents = classDetails(classObj).totalNumberOfStudents - 1;
+//   const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+//   for (let i = 0; i < classObj.students.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < classObj.students[i].marks.length; j++) {
+//       if (classObj.students[i].name == student) {
+//         continue;
+//       }
+//       if (classObj.students[i].marks[j].mark > averageMarkOfStudent) {
+//         count++;
+//         break;
+//       }
+//     }
+//     if (count) {
+//       studentsAboveAvg.push(classObj.students[i].name);
+//     }
+//   }
+//   let percentage = (studentsAboveAvg.length / totalStudents) * 100;
+//   return percentage
+// }
+// console.log(
+//   getPercentageOfStudentsScoredAboveAvgStudentInAnySubject("Ravi", classObj)
+// );
+// 76.Write a function to calculate and print the percentage of students who scored below the average marks of a specific student in at least one subject.
+// function getPercentageOfStudentsScoredBelowAvgStudentInAnySubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   let studentsBelowAvg: Array<string> = [];
+//   const totalStudents = classDetails(classObj).totalNumberOfStudents - 1;
+//   const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+//   for (let i = 0; i < classObj.students.length; i++) {
+//     let count = 0;
+//     for (let j = 0; j < classObj.students[i].marks.length; j++) {
+//       if (classObj.students[i].name == student) {
+//         continue;
+//       }
+//       if (classObj.students[i].marks[j].mark < averageMarkOfStudent) {
+//         count++;
+//         break;
+//       }
+//     }
+//     if (count) {
+//       studentsBelowAvg.push(classObj.students[i].name);
+//     }
+//   }
+//   let percentage = (studentsBelowAvg.length / totalStudents) * 100;
+//   return percentage
+// }
+// console.log(
+//   getPercentageOfStudentsScoredBelowAvgStudentInAnySubject("Ravi", classObj)
+// );
+// 77.Write a function to find and print the student(s) who scored above the average marks of a specific student in all subjects.
+// function getStudentsScoredAboveAvgStudentInAllSubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   const averageMarkOfstudent = studentDetail[student].averageMarkOfStudent;
+//   let studentsWereAboveAvg = checkAboveCertainMark(
+//     averageMarkOfstudent,
+//     "all",
+//     classObj
+//   );
+//   return studentsWereAboveAvg
+// }
+// console.log(
+//   getStudentsScoredAboveAvgStudentInAllSubject("Mini SS", classObj)
+// );
+//78.Write a function to find and print the student(s) who scored below the average marks of a specific student in all subjects.
+// function getStudentsScoredBelowAvgStudentInAllSubject(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const studentDetail = studentDetails(classObj);
+//   const averageMarkOfstudent = studentDetail[student].averageMarkOfStudent;
+//   let studentsWereBelowAvg = checkBelowCertainMark(
+//     averageMarkOfstudent,
+//     "all",
+//     classObj
+//   );
+//   return studentsWereBelowAvg
+// }
+// console.log(
+//   getStudentsScoredBelowAvgStudentInAllSubject("Mini SS", classObj)
+// );
+// 79.Write a function to find and print the subject(s) in which the average marks are above the average marks of a specific student.
+// function getSubjectsWithAvgMarksAboveSpecificStudent(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const subjectAboveAvg: Array<string> = [];
+//   const studentDetail = studentDetails(classObj);
+//   const subjectDetail = subjectDetails(classObj);
+//   const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     if (value.averageMark > averageMarkOfStudent) {
+//       subjectAboveAvg.push(key);
+//     }
+//   });
+//   return subjectAboveAvg
+// }
+// console.log(getSubjectsWithAvgMarksAboveSpecificStudent("Ravi", classObj));
+//80.Write a function to find and print the subject(s) in which the average marks are below the average marks of a specific student.
+// function getSubjectsWithAvgMarksBelowSpecificStudent(
+//   student: string,
+//   classObj: ClassObj
+// ) {
+//   const subjectBelowAvg: Array<string> = [];
+//   const studentDetail = studentDetails(classObj);
+//   const subjectDetail = subjectDetails(classObj);
+//   const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+//   Object.entries(subjectDetail).forEach(([key, value]) => {
+//     if (value.averageMark < averageMarkOfStudent) {
+//       subjectBelowAvg.push(key);
+//     }
+//   });
+//   return subjectBelowAvg
+// }
+// console.log(getSubjectsWithAvgMarksBelowSpecificStudent("Ravi", classObj));
+// 81.Write a function to find and print the subject(s) in which the highest percentage of students scored above the average marks of a specific student.
+fetch('https://jsonplaceholder.typicode.com/posts') //api for the get request
+    .then(response => response.json())
+    .then(data => console.log(data));

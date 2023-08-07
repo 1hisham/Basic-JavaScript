@@ -11,9 +11,11 @@ function classDetails(classObj) {
     let maxMark = 50;
     let totalMarkOfStudent = 0;
     let totalMarksOfstudents = [];
+    let totalNumbersubjectStudyByStudents = 0;
     classObj.students.forEach((student, index) => {
         totalNumberOfStudent = index + 1;
         student.marks.forEach((item) => {
+            totalNumbersubjectStudyByStudents++;
             totalMark += item.mark;
             totalSubject++;
             totalMarkOfStudent += item.mark;
@@ -23,12 +25,14 @@ function classDetails(classObj) {
     });
     totalAverage = totalMark / totalNumberOfStudent;
     totalpercentage = (totalMark / (totalSubject * maxMark)) * 100;
+    let studentsAverageMark = totalMark / totalNumbersubjectStudyByStudents;
     classDetail = {
         totalNumberOfStudents: totalNumberOfStudent,
         totalMark: totalMark,
         totalAverage: totalAverage,
         percentageOfClass: totalpercentage,
         totalMarkOfStudents: totalMarksOfstudents,
+        studentAverage: studentsAverageMark,
     };
     return classDetail;
 }

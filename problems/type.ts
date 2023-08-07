@@ -13,6 +13,8 @@ type ClassDetail = {
   totalAverage: number;
   percentageOfClass: number;
   totalMarkOfStudents : Array<number>;
+  studentAverage:number;
+
 };
 
 type SubSubjectDetail = {
@@ -20,7 +22,8 @@ type SubSubjectDetail = {
   totalStudent: number;
   averageMark: number;
   totalpercentage: number;
-  markDetail:Array<number>
+  markDetail:Array<number>;
+ 
 };
 
 type SubjectDetail = Record<string, SubSubjectDetail>;
