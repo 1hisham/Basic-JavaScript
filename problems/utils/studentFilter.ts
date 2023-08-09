@@ -1,5 +1,16 @@
 import { studentDetails } from "./studentDetails";
 
+// comment :- split function into two, one for subject, one for all subjects
+// comment :- use filterArray as parameter,
+
+// enum {
+// }
+// type Filter {
+//   field: enum,
+//   value: number
+// }
+// type filters []Filter
+
 
 function studentFilter(
   filterMark: number,

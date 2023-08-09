@@ -1,5 +1,5 @@
 import { studentDetails } from "./studentDetails"
-
+// comments :- split this into two separate functions
 function checkAboveCertainMark(certainMark:number, subject:string, classObj:ClassObj){
    let studentsData:Array<string> = []
    let indexCount:number = 0

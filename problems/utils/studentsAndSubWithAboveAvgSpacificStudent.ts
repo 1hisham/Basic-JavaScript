@@ -1,6 +1,7 @@
 import { studentDetails } from "./studentDetails";
 import { subjectDetails } from "./subjectDetails";
 
+// comment :=
 function studentAndSubAboveAvgMarkSpacificStduent(
   student: string,
   classObj: ClassObj

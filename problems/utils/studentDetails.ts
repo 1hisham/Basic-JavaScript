@@ -1,4 +1,6 @@
+// comment :- rename to studentsDetails
 function studentDetails(classObj: ClassObj) {
+  // comment :- rename to Details
   let studentObject: StudentDetail = {};
   let allsubject: Array<string> = [];
   let allMarks: Array<number> =[]

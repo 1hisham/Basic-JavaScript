@@ -1,3 +1,4 @@
+// comments :- split this two seperate functions
 function calculateHigestAndLowest(type: string, claculateItems: Array<number>):number {
   let maxValue = 250;
   let minValue = 0;
