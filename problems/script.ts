@@ -1746,50 +1746,51 @@ console.log(studentSubjects("Ravi", classObj))
 
 // 95.Write a function to calculate and print the percentage of students who scored above the average marks of a specific student in the majority of subjects.
 
- function getPercentageOfStudentsScoredAboveAvgStudentInMajoritySubject(student:string, classObj:ClassObj){
-    const studentDetail = studentDetails(classObj);
-  let studentsAboveAvg: Array<string> = [];
-  const totalStudents = classDetails(classObj).totalNumberOfStudents ;
-  const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
-  for (let i = 0; i < classObj.students.length; i++) {
-    let count = 0;
-    let totalSubjects =classObj.students[i].marks.length
-    for (let j = 0; j < classObj.students[i].marks.length; j++) {
+//  function getPercentageOfStudentsScoredAboveAvgStudentInMajoritySubject(student:string, classObj:ClassObj){
+//     const studentDetail = studentDetails(classObj);
+//   let studentsAboveAvg: Array<string> = [];
+//   const totalStudents = classDetails(classObj).totalNumberOfStudents ;
+//   const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+//   for (let i = 0; i < classObj.students.length; i++) {
+//     let count = 0;
+//     let totalSubjects =classObj.students[i].marks.length
+//     for (let j = 0; j < classObj.students[i].marks.length; j++) {
 
-      if (classObj.students[i].marks[j].mark > averageMarkOfStudent) {
-        count++;
-      }
-    }
-    if (count > (totalSubjects / 2)) {
-      studentsAboveAvg.push(classObj.students[i].name);
-    }
-  }
-  let percentage = (studentsAboveAvg.length / totalStudents) * 100;
-  return percentage
- }
- console.log(getPercentageOfStudentsScoredAboveAvgStudentInMajoritySubject("Ravi", classObj))
+//       if (classObj.students[i].marks[j].mark > averageMarkOfStudent) {
+//         count++;
+//       }
+//     }
+//     if (count > (totalSubjects / 2)) {
+//       studentsAboveAvg.push(classObj.students[i].name);
+//     }
+//   }
+//   let percentage = (studentsAboveAvg.length / totalStudents) * 100;
+//   return percentage
+//  }
+//  console.log(getPercentageOfStudentsScoredAboveAvgStudentInMajoritySubject("Ravi", classObj))
 
 //  96.Write a function to calculate and print the percentage of students who scored below the average marks of a specific student in the majority of subjects.
 
-function getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject(student:string, classObj:ClassObj){
-  const studentDetail = studentDetails(classObj);
-let studentsBelowAvg: Array<string> = [];
-const totalStudents = classDetails(classObj).totalNumberOfStudents ;
-const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
-for (let i = 0; i < classObj.students.length; i++) {
-  let count = 0;
-  let totalSubjects =classObj.students[i].marks.length
-  for (let j = 0; j < classObj.students[i].marks.length; j++) {
+// function getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject(student:string, classObj:ClassObj){
+//   const studentDetail = studentDetails(classObj);
+// let studentsBelowAvg: Array<string> = [];
+// const totalStudents = classDetails(classObj).totalNumberOfStudents ;
+// const averageMarkOfStudent = studentDetail[student].averageMarkOfStudent;
+// for (let i = 0; i < classObj.students.length; i++) {
+//   let count = 0;
+//   let totalSubjects =classObj.students[i].marks.length
+//   for (let j = 0; j < classObj.students[i].marks.length; j++) {
 
-    if (classObj.students[i].marks[j].mark < averageMarkOfStudent) {
-      count++;
-    }
-  }
-  if (count > (totalSubjects / 2)) {
-    studentsBelowAvg.push(classObj.students[i].name);
-  }
-}
-let percentage = (studentsBelowAvg.length / totalStudents) * 100;
-return percentage
-}
-console.log(getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject("Ravi", classObj))
+//     if (classObj.students[i].marks[j].mark < averageMarkOfStudent) {
+//       count++;
+//     }
+//   }
+//   if (count > (totalSubjects / 2)) {
+//     studentsBelowAvg.push(classObj.students[i].name);
+//   }
+// }
+// let percentage = (studentsBelowAvg.length / totalStudents) * 100;
+// return percentage
+// }
+// console.log(getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject("Ravi", classObj))
+// console.log(getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject("Ravi", classObj))
