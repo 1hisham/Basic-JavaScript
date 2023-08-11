@@ -1793,4 +1793,3 @@ console.log(studentSubjects("Ravi", classObj))
 // return percentage
 // }
 // console.log(getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject("Ravi", classObj))
-// console.log(getPercentageOfStudentsScoredBelowAvgStudentInMajoritySubject("Ravi", classObj))
