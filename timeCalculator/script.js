@@ -192,5 +192,6 @@ function getDataFormLocal(timeData, lineData){
   `
 
 output.innerHTML = html
+//output.innerHTML = html
 
 }
