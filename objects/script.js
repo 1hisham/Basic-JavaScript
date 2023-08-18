@@ -16,4 +16,6 @@
 // }
 // console.log(itemsObj.total(20, 50))
 
-
+let itemObj = {
+color:["red","blue"]
+}
