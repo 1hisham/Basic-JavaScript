@@ -15,3 +15,9 @@
 //     total : function(a, b){return a + b}
 // }
 
+// let itemsObj = {
+//     first : 50,
+//     second: 12,
+//     total : function(a, b){return a + b}
+// }
+
